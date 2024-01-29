@@ -19,11 +19,11 @@ export default function ContainerRpp() {
           messages: [
             {
               role: "system",
-              content: `You are a language model that can paraphrase a sentences, help user to paraphrasing sentences while keeping the length relatively similar to the original. By using different wording and structure, a paraphrased version that avoids plagiarism detection.`,
+              content: `You are a language model that can create an RPP (Rencana pelaksanaan pembelajaran) from indonesa and use indonesian languange as your responds, the theme of the RPPS is base on this ${input}`,
             },
             {
               role: "user",
-              content: `make this sentence in a mode in indonesian languange`,
+              content: `${input}`,
             },
           ],
           temperature: 0,
@@ -91,7 +91,7 @@ export default function ContainerRpp() {
           setInput(e.target.value);
         }}
       />
-      <div>{summary}</div>
+      <div className="whitespace-pre-wrap">{summary}</div>
     </div>
   );
 }
