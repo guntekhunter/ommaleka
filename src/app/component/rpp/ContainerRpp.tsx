@@ -72,26 +72,27 @@ export default function ContainerRpp() {
   };
   console.log(summary);
   return (
-    <div>
-      ommaleka
-      <textarea
-        placeholder="Contoh: Teknologi dapat diartikan sebagai penerapan ilmu pengetahuan, penemuan, dan keterampilan yang digunakan untuk merancang, membuat, dan memanfaatkan alat, mesin, perangkat lunak, sistem, dan proses untuk memecahkan masalah dan memenuhi kebutuhan pendidikan....."
-        className="text-gray-600 w-full border-[1.5px] px-5 border-gray-200 dark:border-gray-500 rounded-md appearance-none h-[15rem] overflow-y-scroll border-t-[1px] px-5 scrollbar-thin scrollbar-track-[#F5F8FA] scrollbar-thumb-black resize-none focus:ring-0 focus:outline-none py-[1rem] mt-[1.4rem] whitespace-pre-wrap dark:scrollbar-track-[#0F0F0F] dark:text-white dark:bg-black"
-        name=""
-        id=""
-        value={input}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" && !e.shiftKey) {
+    <div className="w-full flex justify-center">
+      <div className="w-[80%]">
+        <textarea
+          placeholder="Matematika"
+          className="text-gray-600 w-full border-[1.5px] px-5 border-gray-200 dark:border-gray-500 rounded-md appearance-none"
+          name=""
+          id=""
+          value={input}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault();
+              startChat();
+            }
+          }}
+          onChange={(e) => {
             e.preventDefault();
-            startChat();
-          }
-        }}
-        onChange={(e) => {
-          e.preventDefault();
-          setInput(e.target.value);
-        }}
-      />
-      <div className="whitespace-pre-wrap">{summary}</div>
+            setInput(e.target.value);
+          }}
+        />
+        <div className="whitespace-pre-wrap ">{summary}</div>
+      </div>
     </div>
   );
 }
