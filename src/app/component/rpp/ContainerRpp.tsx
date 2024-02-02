@@ -4,6 +4,7 @@ import {
   ReconnectInterval,
   createParser,
 } from "eventsource-parser";
+import Markdown from "markdown-to-jsx";
 import React, { useState } from "react";
 
 export default function ContainerRpp() {
@@ -17,6 +18,8 @@ export default function ContainerRpp() {
   const [kelas, setKelas] = useState("");
 
   const startChat = async () => {
+    const data = await fetch("/data/data.txt");
+    const text = await data.text();
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
@@ -25,11 +28,11 @@ export default function ContainerRpp() {
           messages: [
             {
               role: "system",
-              content: `You are a language model that can create an RPP (Rencana pelaksanaan pembelajaran) from indonesa and use indonesian languange as your responds, the theme of the RPPS is base on this ${input}`,
+              content: `You are a language model that can create an RPP (Rencana pelaksanaan pembelajaran) from indonesa and use indonesian languange as your responds, you will be provide by link to a certain data so you can make RPP around and base on that link to a data and other data that you heve. Make the outpus as an mardawn format`,
             },
             {
               role: "user",
-              content: `mata pelajaran = ${mapel}, kd = ${kd}, sk = ${sk}, metode pembelajaran = ${metodePembelajaran}, tujuan pembelajaran = ${tujuanPembelajaran}, kelas = ${kelas}`,
+              content: `the RPP is should talk about mata pelajaran = ${mapel}, Kompetensi Dasar ${kd}, standar kompetensi = ${sk}, metode pembelajaran = ${metodePembelajaran}, tujuan pembelajaran = ${tujuanPembelajaran}, kelas = ${kelas} that is the example of the RPP xml format = ${text}, on the kegiatan pembelajaran part you need to make it on table so the information is clear to read.`,
             },
           ],
           temperature: 0,
@@ -79,139 +82,146 @@ export default function ContainerRpp() {
   console.log(summary);
   return (
     <div className="w-full flex justify-center bg-[#FAFAFA] h-full min-h-screen py-[3rem]">
-      <div className="w-[80%] bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black">
-        <div className="space-y-[1rem] text-[.8rem] font-normal">
-          <h1 className="text-[1rem] font-bold">Buat RPP</h1>
-          <div className="grid grid-cols-3 gap-[1.5rem]">
-            <div className="space-y-[.5rem]">
-              <label htmlFor="mataPelajaran">Mata Pelajaran</label>
-              <input
-                placeholder=""
-                className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
-                name="mataPelajaran"
-                id=""
-                value={mapel}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
+      <div className="w-[80%] space-y-[2rem]">
+        <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black">
+          <div className="space-y-[1rem] text-[.8rem] font-normal">
+            <h1 className="text-[1rem] font-bold">Buat RPP</h1>
+            <div className="grid grid-cols-3 gap-[1.5rem]">
+              <div className="space-y-[.5rem]">
+                <label htmlFor="mataPelajaran">Mata Pelajaran</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="mataPelajaran"
+                  id=""
+                  value={mapel}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
                     e.preventDefault();
-                    startChat();
-                  }
-                }}
-                onChange={(e) => {
-                  e.preventDefault();
-                  setMapel(e.target.value);
-                }}
-              />
+                    setMapel(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="space-y-[.5rem]">
+                <label htmlFor="kd">KD (Kompetensi Dasar)</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="kd"
+                  id=""
+                  value={kd}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setKd(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="space-y-[.5rem]">
+                <label htmlFor="sk">SK (Standar Kompetensi)</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="sk"
+                  id=""
+                  value={sk}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setSk(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="space-y-[.5rem]">
+                <label htmlFor="metodePembelajaran">Metode Pembelajaran</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="metodePembelajaran"
+                  id=""
+                  value={metodePembelajaran}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setMetodePembelajaran(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="space-y-[.5rem]">
+                <label htmlFor="mataPelajaran">Tujuan Pembelajaran</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="mataPelajaran"
+                  id=""
+                  value={tujuanPembelajaran}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setTujuanPembelajaran(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="space-y-[.5rem]">
+                <label htmlFor="kelas">Kelas</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="kelas"
+                  id=""
+                  value={kelas}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setKelas(e.target.value);
+                  }}
+                />
+              </div>
             </div>
-            <div className="space-y-[.5rem]">
-              <label htmlFor="kd">KD (Kompetensi Dasar)</label>
-              <input
-                placeholder=""
-                className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
-                name="kd"
-                id=""
-                value={kd}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    startChat();
-                  }
-                }}
-                onChange={(e) => {
-                  e.preventDefault();
-                  setKd(e.target.value);
-                }}
-              />
-            </div>
-            <div className="space-y-[.5rem]">
-              <label htmlFor="sk">SK (Standar Kompetensi)</label>
-              <input
-                placeholder=""
-                className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
-                name="sk"
-                id=""
-                value={sk}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    startChat();
-                  }
-                }}
-                onChange={(e) => {
-                  e.preventDefault();
-                  setSk(e.target.value);
-                }}
-              />
-            </div>
-            <div className="space-y-[.5rem]">
-              <label htmlFor="metodePembelajaran">Metode Pembelajaran</label>
-              <input
-                placeholder=""
-                className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
-                name="metodePembelajaran"
-                id=""
-                value={metodePembelajaran}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    startChat();
-                  }
-                }}
-                onChange={(e) => {
-                  e.preventDefault();
-                  setMetodePembelajaran(e.target.value);
-                }}
-              />
-            </div>
-            <div className="space-y-[.5rem]">
-              <label htmlFor="mataPelajaran">Tujuan Pembelajaran</label>
-              <input
-                placeholder=""
-                className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
-                name="mataPelajaran"
-                id=""
-                value={tujuanPembelajaran}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    startChat();
-                  }
-                }}
-                onChange={(e) => {
-                  e.preventDefault();
-                  setTujuanPembelajaran(e.target.value);
-                }}
-              />
-            </div>
-            <div className="space-y-[.5rem]">
-              <label htmlFor="kelas">Kelas</label>
-              <input
-                placeholder=""
-                className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
-                name="kelas"
-                id=""
-                value={kelas}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    startChat();
-                  }
-                }}
-                onChange={(e) => {
-                  e.preventDefault();
-                  setKelas(e.target.value);
-                }}
-              />
+            <div>
+              <button
+                onClick={startChat}
+                className="w-full bg-white border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl mt-6"
+              >
+                Buat RPP
+              </button>
             </div>
           </div>
-          <button
-            onClick={startChat}
-            className="w-full bg-white border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl mt-6"
-          >
-            Buat RPP
-          </button>
         </div>
-        <div className="whitespace-pre-wrap ">{summary}</div>
+        <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black">
+          {/* <div className="whitespace-pre-wrap "> */}
+          <Markdown>{summary}</Markdown>
+        </div>
       </div>
     </div>
   );
