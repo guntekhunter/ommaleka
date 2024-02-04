@@ -6,6 +6,7 @@ import {
 } from "eventsource-parser";
 import Markdown from "markdown-to-jsx";
 import React, { useState } from "react";
+import { Inter } from "next/font/google";
 
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");
@@ -18,7 +19,7 @@ export default function ContainerRpp() {
   const [kelas, setKelas] = useState("");
 
   const startChat = async () => {
-    const data = await fetch("/data/data.txt");
+    const data = await fetch("/data/PDF rpp.md");
     const text = await data.text();
     try {
       const res = await fetch("/api/chat", {
@@ -28,11 +29,12 @@ export default function ContainerRpp() {
           messages: [
             {
               role: "system",
-              content: `You are a language model that can create an RPP (Rencana pelaksanaan pembelajaran) from indonesa and use indonesian languange as your responds, you will be provide by link to a certain data so you can make RPP around and base on that link to a data and other data that you heve`,
+              content: `You are a language model that can create an RPP (Rencana pelaksanaan pembelajaran) from indonesa and use indonesian languange as your responds, you will be provide by link to a certain data so you can make RPP around and base on that link to a data and other data that you heve. Make the responds on markup format`,
             },
             {
               role: "user",
-              content: `the RPP is should talk about mata pelajaran = ${mapel}, Kompetensi Dasar ${kd}, standar kompetensi = ${sk}, metode pembelajaran = ${metodePembelajaran}, tujuan pembelajaran = ${tujuanPembelajaran}, kelas = ${kelas}, on the kegiatan pembelajaran part you need to make it on table so the information is clear to read.`,
+              content: `the RPP is should talk about mata pelajaran = ${mapel}, Kompetensi Dasar ${kd}, standar kompetensi = ${sk}, metode pembelajaran = ${metodePembelajaran}, tujuan pembelajaran = ${tujuanPembelajaran}, kelas = ${kelas} on the kegiatan pembelajaran part you need to make it on table so the information is clear to read.`,
+              // content: `mata pelajaran = ${mapel}`,
             },
           ],
           temperature: 0,
@@ -218,8 +220,68 @@ export default function ContainerRpp() {
             </div>
           </div>
           <div className="bg-gray-200 w-[60%] p-[2rem]">
-            <div className="bg-white w-full p-[1rem] text-[.5rem] white">
-              {summary}
+            {/* <div className="bg-white w-full p-[1rem] text-[.5rem] white whitespace-pre-wrap"> */}
+            <div className="bg-white w-full p-[1rem] text-[.5rem] white font-serif">
+              <div className="space-y-2">
+                <div className="w-full text-center font-bold">
+                  RENCANA PELAKSANAAN PEMBELAJARAN
+                </div>
+                <div className="w-full text-center font-bold">
+                  Kurikulum Merdeka
+                </div>
+                <div className="border-solid border-[1px] border-black" />
+                <div className="px-[1rem]">
+                  <table>
+                    <tr>
+                      <td>Penyusun</td>
+                      <td>:</td>
+                      <td>Nama Penulis</td>
+                    </tr>
+                    <tr>
+                      <td>Instansi</td>
+                      <td>:</td>
+                      <td>Nama Penulis</td>
+                    </tr>
+                    <tr>
+                      <td>Tahun Penyusunan</td>
+                      <td>:</td>
+                      <td>Nama Penulis</td>
+                    </tr>
+                    <tr>
+                      <td>Jenjang Sekolah</td>
+                      <td>:</td>
+                      <td>Nama Penulis</td>
+                    </tr>
+                    <tr>
+                      <td>Mata Pelajaran</td>
+                      <td>:</td>
+                      <td>Nama Penulis</td>
+                    </tr>
+                    <tr>
+                      <td>Fase / Kelas</td>
+                      <td>:</td>
+                      <td>Nama Penulis</td>
+                    </tr>
+                    <tr>
+                      <td>Bab IV</td>
+                      <td>:</td>
+                      <td>Nama Penulis</td>
+                    </tr>
+                    <tr>
+                      <td>Tema</td>
+                      <td>:</td>
+                      <td>Nama Penulis</td>
+                    </tr>
+                    <tr>
+                      <td>Alokasi Waktu</td>
+                      <td>:</td>
+                      <td>Nama Penulis</td>
+                    </tr>
+                  </table>
+                </div>
+                <div className="border-solid border-[1px] border-black" />
+                <Markdown>{summary}</Markdown>
+              </div>
             </div>
           </div>
         </div>
