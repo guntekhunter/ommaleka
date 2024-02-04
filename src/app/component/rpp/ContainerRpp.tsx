@@ -4,8 +4,8 @@ import {
   ReconnectInterval,
   createParser,
 } from "eventsource-parser";
-import Markdown from "markdown-to-jsx";
 import React, { useState } from "react";
+import Markdown from "markdown-to-jsx";
 import { Inter } from "next/font/google";
 
 export default function ContainerRpp() {
@@ -19,7 +19,7 @@ export default function ContainerRpp() {
   const [kelas, setKelas] = useState("");
 
   const startChat = async () => {
-    const data = await fetch("/data/PDF rpp.md");
+    const data = await fetch("/data/data.txt");
     const text = await data.text();
     try {
       const res = await fetch("/api/chat", {
@@ -33,8 +33,7 @@ export default function ContainerRpp() {
             },
             {
               role: "user",
-              content: `the RPP is should talk about mata pelajaran = ${mapel}, Kompetensi Dasar ${kd}, standar kompetensi = ${sk}, metode pembelajaran = ${metodePembelajaran}, tujuan pembelajaran = ${tujuanPembelajaran}, kelas = ${kelas} on the kegiatan pembelajaran part you need to make it on table so the information is clear to read.`,
-              // content: `mata pelajaran = ${mapel}`,
+              content: `create RPP mata pelajaran = ${mapel} bse on this format${text} make it on md format`,
             },
           ],
           temperature: 0,
@@ -213,7 +212,7 @@ export default function ContainerRpp() {
             <div>
               <button
                 onClick={startChat}
-                className="w-full bg-white border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl mt-6"
+                className="w-full bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl mt-6"
               >
                 Buat RPP
               </button>
@@ -231,56 +230,62 @@ export default function ContainerRpp() {
                 </div>
                 <div className="border-solid border-[1px] border-black" />
                 <div className="px-[1rem]">
-                  <table>
-                    <tr>
-                      <td>Penyusun</td>
-                      <td>:</td>
-                      <td>Nama Penulis</td>
-                    </tr>
-                    <tr>
-                      <td>Instansi</td>
-                      <td>:</td>
-                      <td>Nama Penulis</td>
-                    </tr>
-                    <tr>
-                      <td>Tahun Penyusunan</td>
-                      <td>:</td>
-                      <td>Nama Penulis</td>
-                    </tr>
-                    <tr>
-                      <td>Jenjang Sekolah</td>
-                      <td>:</td>
-                      <td>Nama Penulis</td>
-                    </tr>
-                    <tr>
-                      <td>Mata Pelajaran</td>
-                      <td>:</td>
-                      <td>Nama Penulis</td>
-                    </tr>
-                    <tr>
-                      <td>Fase / Kelas</td>
-                      <td>:</td>
-                      <td>Nama Penulis</td>
-                    </tr>
-                    <tr>
-                      <td>Bab IV</td>
-                      <td>:</td>
-                      <td>Nama Penulis</td>
-                    </tr>
-                    <tr>
-                      <td>Tema</td>
-                      <td>:</td>
-                      <td>Nama Penulis</td>
-                    </tr>
-                    <tr>
-                      <td>Alokasi Waktu</td>
-                      <td>:</td>
-                      <td>Nama Penulis</td>
-                    </tr>
-                  </table>
+                  <div className="flex flex-col">
+                    <div className="flex w-[50%]">
+                      <div className="w-2/6">Penyusun</div>
+                      <div className="w-1/12">:</div>
+                      <div className="w-3/10">Nama Penulis</div>
+                    </div>
+                    <div className="flex w-[50%]">
+                      <div className="w-2/6">Instansi</div>
+                      <div className="w-1/12">:</div>
+                      <div className="w-3/10">Nama Penulis</div>
+                    </div>
+                    <div className="flex w-[50%]">
+                      <div className="w-2/6">Tahun Penyusunan</div>
+                      <div className="w-1/12">:</div>
+                      <div className="w-3/10">Nama Penulis</div>
+                    </div>
+                    <div className="flex w-[50%]">
+                      <div className="w-2/6">Jenjang Sekolah</div>
+                      <div className="w-1/12">:</div>
+                      <div className="w-3/10">Nama Penulis</div>
+                    </div>
+                    <div className="flex w-[50%]">
+                      <div className="w-2/6">Mata Pelajaran</div>
+                      <div className="w-1/12">:</div>
+                      <div className="w-3/10">Nama Penulis</div>
+                    </div>
+                    <div className="flex w-[50%]">
+                      <div className="w-2/6">Fase / Kelas</div>
+                      <div className="w-1/12">:</div>
+                      <div className="w-3/10">Nama Penulis</div>
+                    </div>
+                    <div className="flex w-[50%]">
+                      <div className="w-2/6">Bab IV</div>
+                      <div className="w-1/12">:</div>
+                      <div className="w-3/10">Nama Penulis</div>
+                    </div>
+                    <div className="flex w-[50%]">
+                      <div className="w-2/6">Tema</div>
+                      <div className="w-1/12">:</div>
+                      <div className="w-3/10">Nama Penulis</div>
+                    </div>
+                    <div className="flex w-[50%]">
+                      <div className="w-2/6">Alokasi Waktu</div>
+                      <div className="w-1/12">:</div>
+                      <div className="w-3/10">Nama Penulis</div>
+                    </div>
+                  </div>
                 </div>
                 <div className="border-solid border-[1px] border-black" />
-                <Markdown>{summary}</Markdown>
+                <div>
+                  <p>A. Kompetensi Awal</p>
+                </div>
+                {/* <div className="whitespace-pre-wrap">{summary}</div> */}
+                <article className="prose prose-li:text-[.5rem] prose-h1:hidden prose-p:text-[.5rem] prose lg:prose-xl max-w-5xl mx-auto prose-headings:text-[.5rem]">
+                  <Markdown>{summary}</Markdown>
+                </article>
               </div>
             </div>
           </div>
