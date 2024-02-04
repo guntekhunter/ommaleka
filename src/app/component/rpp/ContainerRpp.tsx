@@ -28,11 +28,11 @@ export default function ContainerRpp() {
           messages: [
             {
               role: "system",
-              content: `You are a language model that can create an RPP (Rencana pelaksanaan pembelajaran) from indonesa and use indonesian languange as your responds, you will be provide by link to a certain data so you can make RPP around and base on that link to a data and other data that you heve. Make the outpus as an mardawn format`,
+              content: `You are a language model that can create an RPP (Rencana pelaksanaan pembelajaran) from indonesa and use indonesian languange as your responds, you will be provide by link to a certain data so you can make RPP around and base on that link to a data and other data that you heve`,
             },
             {
               role: "user",
-              content: `the RPP is should talk about mata pelajaran = ${mapel}, Kompetensi Dasar ${kd}, standar kompetensi = ${sk}, metode pembelajaran = ${metodePembelajaran}, tujuan pembelajaran = ${tujuanPembelajaran}, kelas = ${kelas} that is the example of the RPP xml format = ${text}, on the kegiatan pembelajaran part you need to make it on table so the information is clear to read.`,
+              content: `the RPP is should talk about mata pelajaran = ${mapel}, Kompetensi Dasar ${kd}, standar kompetensi = ${sk}, metode pembelajaran = ${metodePembelajaran}, tujuan pembelajaran = ${tujuanPembelajaran}, kelas = ${kelas}, on the kegiatan pembelajaran part you need to make it on table so the information is clear to read.`,
             },
           ],
           temperature: 0,
@@ -82,11 +82,11 @@ export default function ContainerRpp() {
   console.log(summary);
   return (
     <div className="w-full flex justify-center bg-[#FAFAFA] h-full min-h-screen py-[3rem]">
-      <div className="w-[80%] space-y-[2rem]">
-        <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black">
-          <div className="space-y-[1rem] text-[.8rem] font-normal">
+      <div className="w-[90%] space-y-[2rem]">
+        <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black flex space-x-[2rem]">
+          <div className="space-y-[1rem] text-[.8rem] font-normal w-[40%]">
             <h1 className="text-[1rem] font-bold">Buat RPP</h1>
-            <div className="grid grid-cols-3 gap-[1.5rem]">
+            <div className="grid grid-cols-2 gap-[1.5rem]">
               <div className="space-y-[.5rem]">
                 <label htmlFor="mataPelajaran">Mata Pelajaran</label>
                 <input
@@ -217,10 +217,11 @@ export default function ContainerRpp() {
               </button>
             </div>
           </div>
-        </div>
-        <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black">
-          {/* <div className="whitespace-pre-wrap "> */}
-          <Markdown>{summary}</Markdown>
+          <div className="bg-gray-200 w-[60%] p-[2rem]">
+            <div className="bg-white w-full p-[1rem] text-[.5rem] white">
+              {summary}
+            </div>
+          </div>
         </div>
       </div>
     </div>
