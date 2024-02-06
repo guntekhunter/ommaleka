@@ -27,7 +27,69 @@ export default function ContainerArtikel() {
             },
             {
               role: "user",
-              content: `create article with keywoard = ${kataKunci} dont forgrt to add pevesindo to the context base on this data ${text} and other to make greate article make it on md format`,
+              content: `create article with keywoard = ${kataKunci} dont forget to add pevesindo to the context base on this data ${text} and other to make greate article make it on md format`,
+            },
+          ],
+          temperature: 0,
+          stream: true,
+        }),
+      });
+      if (!res.ok) {
+        throw new Error(res.statusText);
+      }
+
+      const body = res.body;
+      if (!body) {
+        return;
+      }
+
+      const onParse = (event: ParsedEvent | ReconnectInterval) => {
+        if (event.type === "event") {
+          const data = event.data;
+          try {
+            const text = JSON.parse(data).text ?? "";
+            setSummary((prev) => prev + text);
+          } catch (e) {
+            console.error(e);
+          }
+        }
+      };
+
+      const reader = body.getReader();
+      const decoder = new TextDecoder();
+      const parser = createParser(onParse);
+      let done = false;
+      while (!done) {
+        const { value, done: doneReading } = await reader.read();
+        done = doneReading;
+        const chunkValue = decoder.decode(value);
+        parser.feed(chunkValue);
+      }
+
+      const data = res.body;
+      if (!data) {
+        return;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const continueChat = async () => {
+    const data = await fetch("/data/artikel.txt");
+    const text = await data.text();
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        body: JSON.stringify({
+          model: "gpt-3.5-turbo",
+          messages: [
+            {
+              role: "system",
+              content: `You are a language model that can create an article and use indonesian languange as your responds, you will be provide to a certain data so you can make article around and base on that data and other data that you heve. Make the responds on markup format`,
+            },
+            {
+              role: "user",
+              content: `continue the article = ${summary} dont forget to add pevesindo to the context base on this data ${text} and other to make greate article make it on md format`,
             },
           ],
           temperature: 0,
@@ -129,6 +191,14 @@ export default function ContainerArtikel() {
                 className="w-full bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl mt-6"
               >
                 Buat Artikel
+              </button>
+            </div>
+            <div>
+              <button
+                onClick={continueChat}
+                className="w-full bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl mt-6"
+              >
+                Lanjutkan
               </button>
             </div>
           </div>
