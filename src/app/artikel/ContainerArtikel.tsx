@@ -89,7 +89,7 @@ export default function ContainerArtikel() {
             },
             {
               role: "user",
-              content: `continue the article = ${summary} dont forget to add pevesindo to the context base on this data ${text} and other to make greate article make it on md format`,
+              content: `continue this article = ${summary}  md format`,
             },
           ],
           temperature: 0,
