@@ -85,7 +85,7 @@ export default function ContainerArtikel() {
           messages: [
             {
               role: "system",
-              content: `You are a language model that can create an article and use indonesian languange as your responds, you will be provide to a certain data so you can make article around and base on that data and other data that you heve. Make the responds on markup format`,
+              content: `You are a language model that can continue an article that provided to you and use indonesian languange as your responds, you will be provided by unfinish article that you need to finish. Make the responds on markup format`,
             },
             {
               role: "user",
