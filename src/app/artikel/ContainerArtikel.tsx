@@ -19,7 +19,7 @@ export default function ContainerArtikel() {
       const res = await fetch("/api/chat", {
         method: "POST",
         body: JSON.stringify({
-          model: "gpt-3.5-turbo-0125",
+          model: "gpt-3.5-turbo",
           messages: [
             {
               role: "system",
