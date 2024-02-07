@@ -25,7 +25,7 @@ export default function ContainerRpp() {
       const res = await fetch("/api/chat", {
         method: "POST",
         body: JSON.stringify({
-          model: "gpt-3.5-turbo",
+          model: "gpt-4-0125-preview",
           messages: [
             {
               role: "system",
