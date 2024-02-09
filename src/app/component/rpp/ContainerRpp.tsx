@@ -19,7 +19,7 @@ export default function ContainerRpp() {
   const [kelas, setKelas] = useState("");
 
   const startChat = async () => {
-    const data = await fetch("/data/data.txt");
+    const data = await fetch("/data/rpp.txt");
     const text = await data.text();
     try {
       const res = await fetch("/api/chat", {
@@ -29,14 +29,14 @@ export default function ContainerRpp() {
           messages: [
             {
               role: "system",
-              content: `You are a language model that can create an RPP (Rencana pelaksanaan pembelajaran) from indonesa and use indonesian languange as your responds, you will be provide by link to a certain data so you can make RPP around and base on that link to a data and other data that you heve. Make the responds on markup format`,
+              content: `You are a language model that can create an RPP (Rencana pelaksanaan pembelajaran) from indonesa and use indonesian languange as your responds, you will be provide by link to a certain data so you can make RPP around and base on that link to a data and other data that you heve. Make the responds on md format`,
             },
             {
               role: "user",
-              content: `create RPP mata pelajaran = ${mapel} bse on this format${text} make it on md format`,
+              content: `create RPP mata pelajaran = ${mapel} bse on this format${text} make it on md format you need to make it on a table`,
             },
           ],
-          temperature: 0,
+          temperature: 1,
           stream: true,
         }),
       });
@@ -222,7 +222,7 @@ export default function ContainerRpp() {
             {/* <div className="bg-white w-full p-[1rem] text-[.5rem] white whitespace-pre-wrap"> */}
             <div className="bg-white w-full p-[1rem] text-[.5rem] white font-serif">
               <div className="space-y-2">
-                <div className="w-full text-center font-bold">
+                {/* <div className="w-full text-center font-bold">
                   RENCANA PELAKSANAAN PEMBELAJARAN
                 </div>
                 <div className="w-full text-center font-bold">
@@ -281,9 +281,9 @@ export default function ContainerRpp() {
                 <div className="border-solid border-[1px] border-black" />
                 <div>
                   <p>A. Kompetensi Awal</p>
-                </div>
+                </div> */}
                 {/* <div className="whitespace-pre-wrap">{summary}</div> */}
-                <article className="prose prose-li:text-[.5rem] prose-h1:hidden prose-p:text-[.5rem] prose lg:prose-xl max-w-5xl mx-auto prose-headings:text-[.5rem]">
+                <article className="prose prose-li:text-[.5rem] prose-h1:center prose-p:text-[.5rem] prose lg:prose-xl max-w-5xl mx-auto prose-headings:text-[.5rem] prose-tr:text-[.5rem] prose-th:bg-blue-200 prose-th:p-[.5rem] prose-h1:text-center prose-h1:flex">
                   <Markdown>{summary}</Markdown>
                 </article>
               </div>
