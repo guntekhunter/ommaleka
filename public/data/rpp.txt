@@ -1,33 +1,36 @@
- **RENCANA PELAKSANAAN PEMBELAJARAN (RPP)**                                             
+ #RENCANA PELAKSANAAN PEMBELAJARAN (RPP)                                     
 
                      
- **Satuan Pendidikan**                      :              SD INPRES LOJONG      
- **Mata Pelajaran**                         :              Matematika            
- **Kelas/Semester**                         :              VI/Genap               
- **Materi Pokok**                           :              Mengumpulkan dan Mengurutkan Data (dont cotinue here)
- **Alokasi Waktu**                          :              3 X 45 Menit 
+ **Satuan Pendidikan**                      :              [nama sd]      
+ **Mata Pelajaran**                         :              [mata pelajaran]            
+ **Kelas/Semester**                         :              [kelas][semester]             
+  (the thing up there does not have to be a table)    
+ **Materi Pokok**                           :              [materi] (dont cotinue here)
+ **Alokasi Waktu**                          :              [waktu] Menit 
  (the thing up there does not have to be a table)         
 
 **A. TUJUAN PEMBELAJARAN** (new line here)
    Setelah mengikuti kegiatan pembelajaran menggunakan model pembelajaran Discovery Learning, dengan metode literasi, eksperimen, praktikum, dan presentasi dengan menumbuhkan sikap menyadari kebesaran Tuhan, sikap gotong royong, jujur, dan berani mengemukakan pendapat, siswa dapat:
-   - Mengumpulkan dan Mengurutkan Data dari data tunggal untuk menentukan nilai mana yang paling tepat mewakili data.
+   - [tujuan pembelajaran]
+
 
 **B. LANGKAH - LANGKAH (KEGIATAN) PEMBELAJARAN**
-(so i this section B you need to make a two row and two column)
 | KEGIATAN PENDAHULUAN (15 Menit)                           |                       |
 |-----------------------------------------------------------|-----------------------|
 | **Penguatan Pendidikan Karakter**                         | - Melakukan pembukaan dengan salam pembuka dan berdoa untuk memulai pembelajaran, memeriksa kehadiran peserta didik sebagai sikap disiplin |
 |                                                           | - Mengaitkan materi pembelajaran yang akan dilakukan dengan pengalaman peserta didik terhadap materi sebelumnya, mengingatkan kembali materi dengan bertanya |
 |                                                           | - Memberikan gambaran tentang manfaat mempelajari materi Mengumpulkan dan Mengurutkan Data dalam kehidupan sehari-hari |
 |                                                           | - Memberitahukan tentang tujuan pembelajaran, materi, kompetensi inti, kompetensi dasar, indikator, dan KKM pada pertemuan yang sedang berlangsung, Pembagian kelompok belajar |
+
 | KEGIATAN INTI  ( 170 Menit)                               |                       |
 |-----------------------------------------------------------|-----------------------|
 | **Literasi**                                              | - Peserta didik diberi stimulus atau rangsangan untuk memusatkan perhatian pada materi Mengumpulkan dan Mengurutkan Data melalui pendekatan saintifik (mengamati, menanya, mengumpulkan informasi/eksperimen, mengasosiasikan mengolah informasi, mengomunikasikan) |
-|                                                           |   - **Mengamati:** Peserta didik bersama kelompoknya melakukan pengamatan dari permasalahan yang ada di buku paket berkaitan dengan materi Mengumpulkan dan Mengurutkan Data |
-| **Critical Thinking:**                                    | -  Guru memberikan kesempatan pada peserta didik untuk mengidentifikasi aneka pertanyaan yang berkaitan dengan tayangan yang disajikan dan dijawab melalui kegiatan pembelajaran tentang Mengumpulkan dan Mengurutkan Data |
-| **Collaboration (Kerja Sama):**                           | -  Siswa berlatih praktik/mengerjakan tugas halaman buku, Peserta didik dibentuk dalam beberapa kelompok untuk mendiskusikan, mengumpulkan informasi, mempresentasikan ulang, dan saling bertukar informasi mengenai Mengumpulkan dan Mengurutkan Data, Mengumpulkan data/informasi melalui diskusi kelompok atau kegiatan lain guna menemukan solusi masalah terkait materi pokok, Peserta didik diarahkan untuk mengumpulkan dan mengeksplorasi data dari aneka sumber yang akan digunakan untuk menyelesaikan permasalahan di Lembar Kerja Peserta Didik (LKPD) |
-| **Communication (Komunikasi):**                           | -  Siswa mempresentasikan hasil kerja kelompok/individu, Mempresentasikan hasil diskusi kelompok secara klasikal, mengemukakan pendapat atas presentasi yang dilakukan tentang Mengumpulkan dan Mengurutkan Data dan ditanggapi oleh kelompok yang mempresentasikan, bertanya atas presentasi yang dilakukan, dan peserta didik lain diberi kesempatan untuk menjawabnya |
-| **Creativity (Kreativitas):**                             | -  Kesimpulan Pembelajaran, Guru dan Peserta didik menarik sebuah kesimpulan tentang point-point penting yang muncul dalam kegiatan pembelajaran yang baru dilakukan tentang Mengumpulkan dan Mengurutkan Data, Peserta didik bertanya tentang hal yang belum dipahami atau guru menyampaikan beberapa pertanyaan pemicu kepada siswa berkaitan dengan yang akan selesai dipelajari |
+| **Mengamati:**                                            | - Peserta didik bersama kelompoknya melakukan pengamatan dari permasalahan yang ada di buku paket berkaitan dengan materi Mengumpulkan dan Mengurutkan Data |
+| **Critical Thinking:**                                    | - Guru memberikan kesempatan pada peserta didik untuk mengidentifikasi aneka pertanyaan yang berkaitan dengan tayangan yang disajikan dan dijawab melalui kegiatan pembelajaran tentang Mengumpulkan dan Mengurutkan Data |
+| **Collaboration (Kerja Sama):**                           | - Siswa berlatih praktik/mengerjakan tugas halaman buku, Peserta didik dibentuk dalam beberapa kelompok untuk mendiskusikan, mengumpulkan informasi, mempresentasikan ulang, dan saling bertukar informasi mengenai Mengumpulkan dan Mengurutkan Data, Mengumpulkan data/informasi melalui diskusi kelompok atau kegiatan lain guna menemukan solusi masalah terkait materi pokok, Peserta didik diarahkan untuk mengumpulkan dan mengeksplorasi data dari aneka sumber yang akan digunakan untuk menyelesaikan permasalahan di Lembar Kerja Peserta Didik (LKPD) |
+| **Communication (Komunikasi):**                           | - Siswa mempresentasikan hasil kerja kelompok/individu, Mempresentasikan hasil diskusi kelompok secara klasikal, mengemukakan pendapat atas presentasi yang dilakukan tentang Mengumpulkan dan Mengurutkan Data dan ditanggapi oleh kelompok yang mempresentasikan, bertanya atas presentasi yang dilakukan, dan peserta didik lain diberi kesempatan untuk menjawabnya |
+| **Creativity (Kreativitas):**                             | - Kesimpulan Pembelajaran, Guru dan Peserta didik menarik sebuah kesimpulan tentang point-point penting yang muncul dalam kegiatan pembelajaran yang baru dilakukan tentang Mengumpulkan dan Mengurutkan Data, Peserta didik bertanya tentang hal yang belum dipahami atau guru menyampaikan beberapa pertanyaan pemicu kepada siswa berkaitan dengan yang akan selesai dipelajari |
+
 | PENUTUP (15 Menit)                                        |                       |
 |-----------------------------------------------------------|-----------------------|
 | **Peserta didik**                                         | - Membuat rangkuman/simpulan pelajaran tentang point-point penting yang muncul dalam kegiatan pembelajaran yang baru dilakukan. |
@@ -35,7 +38,12 @@
 |-----------------------------------------------------------|-----------------------|
 **C. PENILAIAN PEMBELAJARAN**
 
-- Tes Tertulis: Menjelaskan Pengenalan Bilangan dan Konsep Bilangan Negatif
+(create a Learning Activities base on the giving data [materi], [mapel], [kelas], [tujuanPembelajaran])
+
+- Tes Tertulis: create a Learning Activities base on the giving data [materi], [mapel], [kelas], [tujuanPembelajaran]
 - Proyek:
+
+
+(so change all the suject inside that format so its base)
                                                        
                             

@@ -10,13 +10,19 @@ import { Inter } from "next/font/google";
 
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");
-  const [input, setInput] = useState<string>("");
   const [mapel, setMapel] = useState("");
-  const [kd, setKd] = useState("");
-  const [sk, setSk] = useState("");
+  const [namaSd, setNamaSd] = useState("");
+  const [kelas, setKelas] = useState("");
+  const [namaSekolah, setNamaSekolah] = useState("");
+  const [semester, setSemester] = useState("");
+  const [materi, setMateri] = useState("");
+  const [waktu, setWaktu] = useState("");
+  const [namaGuru, setNamaGuru] = useState("");
+  const [nipGuru, setNipGuru] = useState("");
+  const [namaKepalaSekolah, setNamaKepalaSekolah] = useState("");
+  const [nipKepalaSekolah, setNipKepalaSekolah] = useState("");
   const [metodePembelajaran, setMetodePembelajaran] = useState("");
   const [tujuanPembelajaran, setTujuanPembelajaran] = useState("");
-  const [kelas, setKelas] = useState("");
 
   const startChat = async () => {
     const data = await fetch("/data/rpp.txt");
@@ -33,10 +39,10 @@ export default function ContainerRpp() {
             },
             {
               role: "user",
-              content: `create RPP mata pelajaran = ${mapel} bse on this format${text} make it on md format you need to make it on a table`,
+              content: `create RPP with main subject is ${mapel},nama sekolah = ${namaSekolah} nama sd = ${namaSd}, kelas = ${kelas}, semester = ${semester}, waktu = ${waktu}, tujuan pembelajaran = ${tujuanPembelajaran}, an the goals of that learning is tujuan pembelajaran = ${tujuanPembelajaran} base on this format ${text} change all the thing inside that format so the subject is base on this ${materi}. make it on md format you need to make it on a table`,
             },
           ],
-          temperature: 1,
+          temperature: 0,
           stream: true,
         }),
       });
@@ -89,6 +95,26 @@ export default function ContainerRpp() {
             <h1 className="text-[1rem] font-bold">Buat RPP</h1>
             <div className="grid grid-cols-2 gap-[1.5rem]">
               <div className="space-y-[.5rem]">
+                <label htmlFor="mataPelajaran">Nama Sekolah</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="nama sekolah"
+                  id=""
+                  value={namaSekolah}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setNamaSekolah(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="space-y-[.5rem]">
                 <label htmlFor="mataPelajaran">Mata Pelajaran</label>
                 <input
                   placeholder=""
@@ -109,87 +135,7 @@ export default function ContainerRpp() {
                 />
               </div>
               <div className="space-y-[.5rem]">
-                <label htmlFor="kd">KD (Kompetensi Dasar)</label>
-                <input
-                  placeholder=""
-                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
-                  name="kd"
-                  id=""
-                  value={kd}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && !e.shiftKey) {
-                      e.preventDefault();
-                      startChat();
-                    }
-                  }}
-                  onChange={(e) => {
-                    e.preventDefault();
-                    setKd(e.target.value);
-                  }}
-                />
-              </div>
-              <div className="space-y-[.5rem]">
-                <label htmlFor="sk">SK (Standar Kompetensi)</label>
-                <input
-                  placeholder=""
-                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
-                  name="sk"
-                  id=""
-                  value={sk}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && !e.shiftKey) {
-                      e.preventDefault();
-                      startChat();
-                    }
-                  }}
-                  onChange={(e) => {
-                    e.preventDefault();
-                    setSk(e.target.value);
-                  }}
-                />
-              </div>
-              <div className="space-y-[.5rem]">
-                <label htmlFor="metodePembelajaran">Metode Pembelajaran</label>
-                <input
-                  placeholder=""
-                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
-                  name="metodePembelajaran"
-                  id=""
-                  value={metodePembelajaran}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && !e.shiftKey) {
-                      e.preventDefault();
-                      startChat();
-                    }
-                  }}
-                  onChange={(e) => {
-                    e.preventDefault();
-                    setMetodePembelajaran(e.target.value);
-                  }}
-                />
-              </div>
-              <div className="space-y-[.5rem]">
-                <label htmlFor="mataPelajaran">Tujuan Pembelajaran</label>
-                <input
-                  placeholder=""
-                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
-                  name="mataPelajaran"
-                  id=""
-                  value={tujuanPembelajaran}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && !e.shiftKey) {
-                      e.preventDefault();
-                      startChat();
-                    }
-                  }}
-                  onChange={(e) => {
-                    e.preventDefault();
-                    setTujuanPembelajaran(e.target.value);
-                  }}
-                />
-              </div>
-              <div className="space-y-[.5rem]">
-                <label htmlFor="kelas">Kelas</label>
+                <label htmlFor="kd">Kelas</label>
                 <input
                   placeholder=""
                   className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
@@ -208,6 +154,166 @@ export default function ContainerRpp() {
                   }}
                 />
               </div>
+              <div className="space-y-[.5rem]">
+                <label htmlFor="sk">Semester</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="semester"
+                  id=""
+                  value={semester}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setSemester(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="space-y-[.5rem]">
+                <label htmlFor="metodePembelajaran">Materi</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="materi"
+                  id=""
+                  value={materi}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setMateri(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="space-y-[.5rem]">
+                <label htmlFor="mataPelajaran">Waktu</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="waktu"
+                  id=""
+                  value={waktu}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setWaktu(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="space-y-[.5rem]">
+                <label htmlFor="kelas">Nama Guru</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="nama guru"
+                  id=""
+                  value={namaGuru}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setNamaGuru(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="space-y-[.5rem]">
+                <label htmlFor="kelas">NIP Guru</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="nip guru"
+                  id=""
+                  value={nipGuru}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setNipGuru(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="space-y-[.5rem]">
+                <label htmlFor="kelas">Nama Kelapa Sekolah</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="nama kepala sekolah"
+                  id=""
+                  value={namaKepalaSekolah}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setNamaKepalaSekolah(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="space-y-[.5rem]">
+                <label htmlFor="kelas">NIP Kepala Sekolah</label>
+                <input
+                  placeholder=""
+                  className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                  name="nip kepala sekolah"
+                  id=""
+                  value={nipKepalaSekolah}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      startChat();
+                    }
+                  }}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setNipKepalaSekolah(e.target.value);
+                  }}
+                />
+              </div>
+            </div>
+            <div className="space-y-[.5rem]">
+              <label htmlFor="kelas">Tujuan Pembelajaran</label>
+              <textarea
+                placeholder=""
+                className="text-gray-600 w-full border-[1.5px] py-2 px-[.8rem] border-black dark:border-gray-500 rounded-md appearance-none"
+                name="tujuan pembelajaran"
+                id=""
+                value={tujuanPembelajaran}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    startChat();
+                  }
+                }}
+                onChange={(e) => {
+                  e.preventDefault();
+                  setTujuanPembelajaran(e.target.value);
+                }}
+              />
             </div>
             <div>
               <button
@@ -218,72 +324,14 @@ export default function ContainerRpp() {
               </button>
             </div>
           </div>
-          <div className="bg-gray-200 w-[60%] p-[2rem]">
+          <div className="bg-gray-200 w-[60%] p-[2rem] h-[40rem] overflow-y-scroll">
             {/* <div className="bg-white w-full p-[1rem] text-[.5rem] white whitespace-pre-wrap"> */}
-            <div className="bg-white w-full p-[1rem] text-[.5rem] white font-serif">
+            <div className="bg-white w-full p-[4rem] text-[.5rem] white font-serif">
               <div className="space-y-2">
-                {/* <div className="w-full text-center font-bold">
-                  RENCANA PELAKSANAAN PEMBELAJARAN
-                </div>
-                <div className="w-full text-center font-bold">
-                  Kurikulum Merdeka
-                </div>
-                <div className="border-solid border-[1px] border-black" />
-                <div className="px-[1rem]">
-                  <div className="flex flex-col">
-                    <div className="flex w-[50%]">
-                      <div className="w-2/6">Penyusun</div>
-                      <div className="w-1/12">:</div>
-                      <div className="w-3/10">Nama Penulis</div>
-                    </div>
-                    <div className="flex w-[50%]">
-                      <div className="w-2/6">Instansi</div>
-                      <div className="w-1/12">:</div>
-                      <div className="w-3/10">Nama Penulis</div>
-                    </div>
-                    <div className="flex w-[50%]">
-                      <div className="w-2/6">Tahun Penyusunan</div>
-                      <div className="w-1/12">:</div>
-                      <div className="w-3/10">Nama Penulis</div>
-                    </div>
-                    <div className="flex w-[50%]">
-                      <div className="w-2/6">Jenjang Sekolah</div>
-                      <div className="w-1/12">:</div>
-                      <div className="w-3/10">Nama Penulis</div>
-                    </div>
-                    <div className="flex w-[50%]">
-                      <div className="w-2/6">Mata Pelajaran</div>
-                      <div className="w-1/12">:</div>
-                      <div className="w-3/10">Nama Penulis</div>
-                    </div>
-                    <div className="flex w-[50%]">
-                      <div className="w-2/6">Fase / Kelas</div>
-                      <div className="w-1/12">:</div>
-                      <div className="w-3/10">Nama Penulis</div>
-                    </div>
-                    <div className="flex w-[50%]">
-                      <div className="w-2/6">Bab IV</div>
-                      <div className="w-1/12">:</div>
-                      <div className="w-3/10">Nama Penulis</div>
-                    </div>
-                    <div className="flex w-[50%]">
-                      <div className="w-2/6">Tema</div>
-                      <div className="w-1/12">:</div>
-                      <div className="w-3/10">Nama Penulis</div>
-                    </div>
-                    <div className="flex w-[50%]">
-                      <div className="w-2/6">Alokasi Waktu</div>
-                      <div className="w-1/12">:</div>
-                      <div className="w-3/10">Nama Penulis</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="border-solid border-[1px] border-black" />
-                <div>
-                  <p>A. Kompetensi Awal</p>
-                </div> */}
-                {/* <div className="whitespace-pre-wrap">{summary}</div> */}
-                <article className="prose prose-li:text-[.5rem] prose-h1:center prose-p:text-[.5rem] prose lg:prose-xl max-w-5xl mx-auto prose-headings:text-[.5rem] prose-tr:text-[.5rem] prose-th:bg-blue-200 prose-th:p-[.5rem] prose-h1:text-center prose-h1:flex">
+                <h1 className="text-center">
+                  RENCANA PELAKSANAAN PEMBELAJARAN (RPP)
+                </h1>
+                <article className="prose prose-li:text-[.5rem] prose-h1:center prose-p:text-[.5rem] prose lg:prose-xl max-w-5xl mx-auto prose-headings:text-[.5rem] prose-tr:text-[.5rem] prose-th:bg-blue-200 prose-th:p-[.5rem] prose-td:border-[1px] prose-td:p-[.5rem] prose-h1:hidden">
                   <Markdown>{summary}</Markdown>
                 </article>
               </div>
