@@ -4,9 +4,10 @@ import {
   ReconnectInterval,
   createParser,
 } from "eventsource-parser";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import { Inter } from "next/font/google";
+import { useReactToPrint } from "react-to-print";
 
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");
@@ -23,8 +24,13 @@ export default function ContainerRpp() {
   const [nipKepalaSekolah, setNipKepalaSekolah] = useState("");
   const [metodePembelajaran, setMetodePembelajaran] = useState("");
   const [tujuanPembelajaran, setTujuanPembelajaran] = useState("");
+  const ref = useRef<HTMLDivElement>(null);
+  const print = useReactToPrint({
+    content: () => ref.current,
+  });
 
   const startChat = async () => {
+    setSummary("");
     const data = await fetch("/data/rpp.txt");
     const text = await data.text();
     try {
@@ -323,10 +329,34 @@ export default function ContainerRpp() {
                 Buat RPP
               </button>
             </div>
+            <div>
+              <button
+                onClick={print}
+                className="w-full bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl mt-6"
+              >
+                Print
+              </button>
+            </div>
           </div>
           <div className="bg-gray-200 md:w-[60%] p-[2rem] h-[40rem] overflow-y-scroll">
             {/* <div className="bg-white w-full p-[1rem] text-[.5rem] white whitespace-pre-wrap"> */}
-            <div className="bg-white w-full p-[4rem] text-[.5rem] white font-serif">
+            <div
+              className="bg-white w-full p-[4rem] text-[.5rem] white font-serif"
+              ref={ref}
+            >
+              <style type="text/css">
+                {`
+                   @page {
+                     size: auto;
+                     margin: 10mm 0 10mm 0;
+                   }
+                   body {
+                     margin: 0;
+                     padding: 0;
+                   }
+                     
+                   `}
+              </style>
               <div className="space-y-2">
                 <h1 className="text-center">
                   RENCANA PELAKSANAAN PEMBELAJARAN (RPP)

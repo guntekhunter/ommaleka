@@ -23,7 +23,7 @@ export default function Navbar() {
         </ul>
 
         {/* mobile */}
-        <ul className="md:space-x-[2rem] text-[.8rem] font-normal md:flex block top-[4rem] absolute bg-white p-[2rem] right-0 z-50">
+        <ul className="md:space-x-[2rem] text-[.8rem] font-normal md:flex block top-[4rem] absolute bg-white p-[2rem] right-0 z-50 md:hidden">
           <li>Home</li>
           <li>Buat Rpp</li>
           <li>Buat Soal</li>
