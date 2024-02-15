@@ -24,12 +24,14 @@ export default function ContainerRpp() {
   const [nipKepalaSekolah, setNipKepalaSekolah] = useState("");
   const [metodePembelajaran, setMetodePembelajaran] = useState("");
   const [tujuanPembelajaran, setTujuanPembelajaran] = useState("");
+  const [loading, setLoading] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const print = useReactToPrint({
     content: () => ref.current,
   });
 
   const startChat = async () => {
+    setLoading(true);
     setSummary("");
     const data = await fetch("/data/rpp.txt");
     const text = await data.text();
@@ -86,6 +88,7 @@ export default function ContainerRpp() {
 
       const data = res.body;
       if (!data) {
+        setLoading(false);
         return;
       }
     } catch (error) {
@@ -329,16 +332,19 @@ export default function ContainerRpp() {
                 Buat RPP
               </button>
             </div>
-            <div>
+          </div>
+          <div className="bg-gray-200 md:w-[60%] p-[2rem] h-[40rem] overflow-y-scroll relative">
+            <div className="fixed bottom-5 transform-translate-x-1/2 -translate-y-1/2 w-[45%] px-[1rem] space-x-[1rem] flex text-[.6rem]">
               <button
                 onClick={print}
-                className="w-full bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl mt-6"
+                className="bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl w-full"
               >
                 Print
               </button>
+              <div className="bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl w-full">
+                Copy
+              </div>
             </div>
-          </div>
-          <div className="bg-gray-200 md:w-[60%] p-[2rem] h-[40rem] overflow-y-scroll">
             {/* <div className="bg-white w-full p-[1rem] text-[.5rem] white whitespace-pre-wrap"> */}
             <div
               className="bg-white w-full p-[4rem] text-[.5rem] white font-serif"
@@ -348,7 +354,7 @@ export default function ContainerRpp() {
                 {`
                    @page {
                      size: auto;
-                     margin: 10mm 0 10mm 0;
+                     margin: 10mm 10mm 10mm 10mm;
                    }
                    body {
                      margin: 0;
@@ -364,6 +370,18 @@ export default function ContainerRpp() {
                 <article className="prose prose-li:text-[.5rem] prose-h1:center prose-p:text-[.5rem] prose lg:prose-xl max-w-5xl mx-auto prose-headings:text-[.5rem] prose-tr:text-[.5rem] prose-th:bg-blue-200 prose-th:p-[.5rem] prose-td:border-[1px] prose-td:p-[.5rem] prose-h1:hidden">
                   <Markdown>{summary}</Markdown>
                 </article>
+                {loading && (
+                  <div className="flex justify-between px-[1rem]">
+                    <div className="space-y-[2.5rem]">
+                      <div>{namaGuru}</div>
+                      <div>{nipGuru}</div>
+                    </div>
+                    <div className="space-y-[2.5rem]">
+                      <div>{namaKepalaSekolah}</div>
+                      <div>{nipKepalaSekolah}</div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

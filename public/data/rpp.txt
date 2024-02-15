@@ -9,7 +9,7 @@
  **Alokasi Waktu**                          :              [waktu] Menit 
  (the thing up there does not have to be a table)         
 
-**A. TUJUAN PEMBELAJARAN** (new line here)
+**A. TUJUAN PEMBELAJARAN** <br>
    Setelah mengikuti kegiatan pembelajaran menggunakan model pembelajaran Discovery Learning, dengan metode literasi, eksperimen, praktikum, dan presentasi dengan menumbuhkan sikap menyadari kebesaran Tuhan, sikap gotong royong, jujur, dan berani mengemukakan pendapat, siswa dapat:
    - [tujuan pembelajaran]
 
