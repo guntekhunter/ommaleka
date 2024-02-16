@@ -6,9 +6,8 @@ import {
 } from "eventsource-parser";
 import React, { useRef, useState } from "react";
 import Markdown from "markdown-to-jsx";
-import { Inter } from "next/font/google";
 import { useReactToPrint } from "react-to-print";
-import JSConfetti from "js-confetti";
+// import JSConfetti from "js-confetti";
 
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");
@@ -23,7 +22,6 @@ export default function ContainerRpp() {
   const [nipGuru, setNipGuru] = useState("");
   const [namaKepalaSekolah, setNamaKepalaSekolah] = useState("");
   const [nipKepalaSekolah, setNipKepalaSekolah] = useState("");
-  const [metodePembelajaran, setMetodePembelajaran] = useState("");
   const [tujuanPembelajaran, setTujuanPembelajaran] = useState("");
   const [loading, setLoading] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -31,7 +29,7 @@ export default function ContainerRpp() {
     content: () => ref.current,
   });
 
-  const jsConfetti = new JSConfetti();
+  // const jsConfetti = new JSConfetti();
 
   const startChat = async () => {
     setLoading(true);
@@ -89,9 +87,9 @@ export default function ContainerRpp() {
         parser.feed(chunkValue);
       }
       // cofetti evvect
-      jsConfetti.addConfetti({
-        confettiColors: ["#a855f7", "#3b0764", "#ef4444", "#ec4899", "#2563eb"],
-      });
+      // jsConfetti.addConfetti({
+      //   confettiColors: ["#a855f7", "#3b0764", "#ef4444", "#ec4899", "#2563eb"],
+      // });
       const data = res.body;
       if (!data) {
         setLoading(false);
