@@ -29,7 +29,7 @@ export default function ContainerRpp() {
     content: () => ref.current,
   });
 
-  const jsConfetti = new JSConfetti();
+  // const jsConfetti = new JSConfetti();
 
   const startChat = async () => {
     setLoading(true);
@@ -87,9 +87,9 @@ export default function ContainerRpp() {
         parser.feed(chunkValue);
       }
       // cofetti evvect
-      jsConfetti.addConfetti({
-        confettiColors: ["#a855f7", "#3b0764", "#ef4444", "#ec4899", "#2563eb"],
-      });
+      // jsConfetti.addConfetti({
+      //   confettiColors: ["#a855f7", "#3b0764", "#ef4444", "#ec4899", "#2563eb"],
+      // });
       const data = res.body;
       if (!data) {
         setLoading(false);
