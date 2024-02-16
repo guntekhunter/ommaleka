@@ -29,7 +29,7 @@ export default function ContainerRpp() {
     content: () => ref.current,
   });
 
-  // const jsConfetti = new JSConfetti();
+  const jsConfetti = new JSConfetti();
 
   const startChat = async () => {
     setLoading(true);
