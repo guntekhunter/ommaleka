@@ -8,6 +8,7 @@ import React, { useRef, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import { Inter } from "next/font/google";
 import { useReactToPrint } from "react-to-print";
+import JSConfetti from "js-confetti";
 
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");
@@ -29,6 +30,8 @@ export default function ContainerRpp() {
   const print = useReactToPrint({
     content: () => ref.current,
   });
+
+  const jsConfetti = new JSConfetti();
 
   const startChat = async () => {
     setLoading(true);
@@ -85,7 +88,10 @@ export default function ContainerRpp() {
         const chunkValue = decoder.decode(value);
         parser.feed(chunkValue);
       }
-
+      // cofetti evvect
+      jsConfetti.addConfetti({
+        confettiColors: ["#a855f7", "#3b0764", "#ef4444", "#ec4899", "#2563eb"],
+      });
       const data = res.body;
       if (!data) {
         setLoading(false);
@@ -364,24 +370,26 @@ export default function ContainerRpp() {
                    `}
               </style>
               <div className="space-y-2">
-                <h1 className="text-center">
+                <h1 className={`text-center ${loading ? "block" : "hidden"}`}>
                   RENCANA PELAKSANAAN PEMBELAJARAN (RPP)
                 </h1>
                 <article className="prose prose-li:text-[.5rem] prose-h1:center prose-p:text-[.5rem] prose lg:prose-xl max-w-5xl mx-auto prose-headings:text-[.5rem] prose-tr:text-[.5rem] prose-th:bg-blue-200 prose-th:p-[.5rem] prose-td:border-[1px] prose-td:p-[.5rem] prose-h1:hidden">
                   <Markdown>{summary}</Markdown>
                 </article>
-                {loading && (
-                  <div className="flex justify-between px-[1rem]">
-                    <div className="space-y-[2.5rem]">
-                      <div>{namaGuru}</div>
-                      <div>{nipGuru}</div>
-                    </div>
-                    <div className="space-y-[2.5rem]">
-                      <div>{namaKepalaSekolah}</div>
-                      <div>{nipKepalaSekolah}</div>
-                    </div>
+                <div
+                  className={`flex justify-between px-[1rem] ${
+                    loading ? "block" : "hidden"
+                  }`}
+                >
+                  <div className="space-y-[2.5rem]">
+                    <div>{namaGuru}</div>
+                    <div>{nipGuru}</div>
                   </div>
-                )}
+                  <div className="space-y-[2.5rem]">
+                    <div>{namaKepalaSekolah}</div>
+                    <div>{nipKepalaSekolah}</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
