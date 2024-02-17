@@ -7,6 +7,7 @@ import {
 import React, { useRef, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import { useReactToPrint } from "react-to-print";
+// import JSConfetti from "js-confetti";
 
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");
@@ -27,6 +28,8 @@ export default function ContainerRpp() {
   const print = useReactToPrint({
     content: () => ref.current,
   });
+
+  // const jsConfetti = new JSConfetti();
 
   const startChat = async () => {
     setLoading(true);

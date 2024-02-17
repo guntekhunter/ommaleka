@@ -27,7 +27,7 @@ export default function ContainerArtikel() {
             },
             {
               role: "user",
-              content: `create article with keywoard = ${kataKunci} dont forget to add pevesindo to the context base on this data ${text} and other to make greate article make it on md format`,
+              content: `create article with keywoard = ${kataKunci}. ${detail}that is the detail of the article, the thing that you should considered to dont forget to add pevesindo to the context base on this data ${text} and other to make greate article make it on md format`,
             },
           ],
           temperature: 0,
