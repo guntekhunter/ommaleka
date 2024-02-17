@@ -7,7 +7,7 @@ import {
 import React, { useRef, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import { useReactToPrint } from "react-to-print";
-// import JSConfetti from "js-confetti";
+import JSConfetti from "js-confetti";
 
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");
@@ -29,11 +29,10 @@ export default function ContainerRpp() {
     content: () => ref.current,
   });
 
-  // const jsConfetti = new JSConfetti();
-
   const startChat = async () => {
     setLoading(true);
     setSummary("");
+
     const data = await fetch("/data/rpp.txt");
     const text = await data.text();
     try {
@@ -75,7 +74,6 @@ export default function ContainerRpp() {
           }
         }
       };
-
       const reader = body.getReader();
       const decoder = new TextDecoder();
       const parser = createParser(onParse);
@@ -86,6 +84,11 @@ export default function ContainerRpp() {
         const chunkValue = decoder.decode(value);
         parser.feed(chunkValue);
       }
+      // cofetti evvect
+      const jsConfetti = new JSConfetti();
+      jsConfetti.addConfetti({
+        confettiColors: ["#a855f7", "#3b0764", "#ef4444", "#ec4899", "#2563eb"],
+      });
       const data = res.body;
       if (!data) {
         setLoading(false);
