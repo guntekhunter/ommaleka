@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* shake animation for modal */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25%,
+  75% {
+    transform: translateX(-1rem);
+  }
+  50% {
+    transform: translateY(1rem);
+  }
+}
+
+@keyframes shake-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25%,
+  75% {
+    transform: translateY(-1rem);
+  }
+  50% {
+    transform: translateY(1rem);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}

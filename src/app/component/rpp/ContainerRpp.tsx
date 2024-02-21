@@ -8,6 +8,7 @@ import React, { useRef, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import { useReactToPrint } from "react-to-print";
 import JSConfetti from "js-confetti";
+import ModalFinishRPP from "../modal/ModalFinishRPP";
 
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");
@@ -24,6 +25,7 @@ export default function ContainerRpp() {
   const [nipKepalaSekolah, setNipKepalaSekolah] = useState("");
   const [tujuanPembelajaran, setTujuanPembelajaran] = useState("");
   const [loading, setLoading] = useState(false);
+  const [modal, setModal] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const print = useReactToPrint({
     content: () => ref.current,
@@ -89,6 +91,12 @@ export default function ContainerRpp() {
       jsConfetti.addConfetti({
         confettiColors: ["#a855f7", "#3b0764", "#ef4444", "#ec4899", "#2563eb"],
       });
+      // show the modal here
+      setModal(true);
+      setTimeout(() => {
+        setModal(false);
+      }, 3000);
+
       const data = res.body;
       if (!data) {
         setLoading(false);
@@ -391,6 +399,13 @@ export default function ContainerRpp() {
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className={`transition-opacity duration-300 ${
+          modal ? "opacity-1" : "hidden opacity-0"
+        }`}
+      >
+        <ModalFinishRPP />
       </div>
     </div>
   );
