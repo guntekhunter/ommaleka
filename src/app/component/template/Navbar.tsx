@@ -4,8 +4,8 @@ import logo from "../../../../public/logo.png";
 
 export default function Navbar() {
   return (
-    <div className="bg-white h-[5rem] drop-shadow-2xl flex justify-around inset-x-0">
-      <div className="md:w-[90%] w-[90%] justify-between items-center flex relative z-10">
+    <div className="bg-white h-[5rem] drop-shadow-2xl flex justify-around z-10">
+      <div className="md:w-[90%] w-[90%] justify-between items-center flex relative ">
         <div className="font-bold">
           <Image
             height={500}

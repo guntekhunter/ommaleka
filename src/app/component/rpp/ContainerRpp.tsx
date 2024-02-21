@@ -26,6 +26,7 @@ export default function ContainerRpp() {
   const [tujuanPembelajaran, setTujuanPembelajaran] = useState("");
   const [loading, setLoading] = useState(false);
   const [modal, setModal] = useState(false);
+  const [sign, setSign] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const print = useReactToPrint({
     content: () => ref.current,
@@ -33,6 +34,7 @@ export default function ContainerRpp() {
 
   const startChat = async () => {
     setLoading(true);
+    setSign(false);
     setSummary("");
 
     const data = await fetch("/data/rpp.txt");
@@ -93,6 +95,7 @@ export default function ContainerRpp() {
       });
       // show the modal here
       setModal(true);
+      setSign(true);
       setTimeout(() => {
         setModal(false);
       }, 3000);
@@ -344,7 +347,7 @@ export default function ContainerRpp() {
               </button>
             </div>
           </div>
-          <div className="bg-gray-200 md:w-[60%] p-[2rem] h-[40rem] overflow-y-scroll relative">
+          <div className="bg-gray-200 md:w-[60%] p-[2rem] h-[40rem] overflow-y-scroll relative scrollbar-thin scrollbar-track-black scrollbar-thumb-purple-500 py-[1rem] dark:scrollbar-track-purple-500 flex-col-reverse flex-1 flex">
             <div className="fixed bottom-5 transform-translate-x-1/2 -translate-y-1/2 w-[45%] px-[1rem] space-x-[1rem] flex text-[.6rem]">
               <button
                 onClick={print}
@@ -383,7 +386,7 @@ export default function ContainerRpp() {
                 </article>
                 <div
                   className={`flex justify-between px-[1rem] ${
-                    loading ? "block" : "hidden"
+                    sign ? "opacity-1" : "hidden opacity-0"
                   }`}
                 >
                   <div className="space-y-[2.5rem]">

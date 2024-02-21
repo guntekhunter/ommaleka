@@ -337,7 +337,7 @@ export default function MainContainer() {
             </button>
           </div>
         </div>
-        <div className="bg-gray-200 md:w-[60%] p-[2rem] h-[40rem] overflow-y-scroll relative">
+        <div className="bg-gray-200 md:w-[60%] p-[2rem] h-[40rem] overflow-y-scroll relative scrollbar-thin scrollbar-track-[#F5F8FA] scrollbar-thumb-black py-[1rem] dark:scrollbar-track-[#0F0F0F] flex-col-reverse flex-1 flex">
           <div className="fixed bottom-5 transform-translate-x-1/2 -translate-y-1/2 w-[45%] px-[1rem] space-x-[1rem] flex text-[.6rem]">
             <button
               onClick={print}
