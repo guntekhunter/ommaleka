@@ -341,7 +341,7 @@ export default function ContainerRpp() {
             <div>
               <button
                 onClick={startChat}
-                className="w-full bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl mt-6"
+                className="w-full bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl mt-6 ml-[-.2rem] hover:drop-shadow-none hover:ml-0"
               >
                 Buat RPP
               </button>
@@ -351,12 +351,12 @@ export default function ContainerRpp() {
             <div className="fixed bottom-5 transform-translate-x-1/2 -translate-y-1/2 w-[45%] px-[1rem] space-x-[1rem] flex text-[.6rem]">
               <button
                 onClick={print}
-                className="bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl w-full"
+                className="bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl w-full ml-[-.2rem] hover:drop-shadow-none hover:ml-0"
               >
                 Print
               </button>
-              <div className="bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl w-full">
-                Copy
+              <div className="bg-purple-500 border border-[1.8px] border-black rounded-md py-[1rem] flex justify-center drop-shadow-3xl w-full ml-[-.2rem] hover:drop-shadow-none hover:ml-0">
+                Copy          
               </div>
             </div>
             {/* <div className="bg-white w-full p-[1rem] text-[.5rem] white whitespace-pre-wrap"> */}
