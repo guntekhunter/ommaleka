@@ -11,6 +11,7 @@ import JSConfetti from "js-confetti";
 import ModalFinishRPP from "../modal/ModalFinishRPP";
 import ButtonArticle from "../button/ButtonArticle";
 import Input from "../input/Input";
+import Image from "next/image";
 
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");
@@ -118,9 +119,32 @@ export default function ContainerRpp() {
     setterFunction(e.target.value);
   };
   return (
-    <div className="w-full flex justify-center bg-[#FAFAFA] h-full min-h-screen py-[3rem] z-10">
-      <div className="w-[90%] space-y-[2rem] z-10">
-        <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-10 space-y-[2rem]">
+    <div className="w-full flex justify-center bg-[#FAFAFA] h-full min-h-screen py-[3rem] z-0">
+      <div className="w-[90%] space-y-[2rem] z-0">
+        <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:block md:space-y-[2rem] z-0 space-y-[2rem] block">
+          <h1 className="text-[1rem] font-bold">Pilih Template RPP</h1>
+          <div className="grid grid-cols-2 gap-[1.5rem]">
+            <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]">
+              <Image
+                className="object-cover h-full w-full ..."
+                width={500}
+                height={500}
+                src="/logo.png"
+                alt={""}
+              />
+            </div>
+            <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]">
+              ommaleka
+            </div>
+            <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]">
+              ommaleka
+            </div>
+            <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]">
+              ommaleka
+            </div>
+          </div>
+        </div>
+        <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]">
           <div className="md:space-y-[1rem] text-[.8rem] font-normal md:w-[40%] z-10">
             <h1 className="text-[1rem] font-bold">Buat RPP</h1>
             <div className="grid grid-cols-2 gap-[1.5rem]">
