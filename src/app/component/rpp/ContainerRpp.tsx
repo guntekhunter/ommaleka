@@ -29,6 +29,7 @@ export default function ContainerRpp() {
   const [tujuanPembelajaran, setTujuanPembelajaran] = useState("");
   const [loading, setLoading] = useState(false);
   const [modal, setModal] = useState(false);
+  const [template, setTemplate] = useState("/data/rpp.txt");
   const [sign, setSign] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const print = useReactToPrint({
@@ -40,7 +41,7 @@ export default function ContainerRpp() {
     setSign(false);
     setSummary("");
 
-    const data = await fetch("/data/rpp.txt");
+    const data = await fetch(template);
     const text = await data.text();
     try {
       const res = await fetch("/api/chat", {
@@ -118,30 +119,44 @@ export default function ContainerRpp() {
     e.preventDefault();
     setterFunction(e.target.value);
   };
+
+  const selected = (e: any) => {
+    setTemplate(e);
+  };
   return (
     <div className="w-full flex justify-center bg-[#FAFAFA] h-full min-h-screen py-[3rem] z-0">
       <div className="w-[90%] space-y-[2rem] z-0">
         <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:block md:space-y-[2rem] z-0 space-y-[2rem] block">
           <h1 className="text-[1rem] font-bold">Pilih Template RPP</h1>
           <div className="grid grid-cols-2 gap-[1.5rem]">
-            <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]">
+            <button
+              onClick={(e) => {
+                selected("/data/rpp-2.txt");
+              }}
+              className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]"
+            >
               <Image
                 className="object-cover h-full w-full ..."
                 width={500}
                 height={500}
-                src="/logo.png"
+                src="/rpp-1.jpg"
                 alt={""}
               />
-            </div>
-            <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]">
-              ommaleka
-            </div>
-            <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]">
-              ommaleka
-            </div>
-            <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]">
-              ommaleka
-            </div>
+            </button>
+            <button
+              onClick={(e) => {
+                selected("/data/rpp.txt");
+              }}
+              className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]"
+            >
+              <Image
+                className="object-cover h-full w-full ..."
+                width={500}
+                height={500}
+                src="/rpp-2.jpg"
+                alt={""}
+              />
+            </button>
           </div>
         </div>
         <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]">
