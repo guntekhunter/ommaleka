@@ -55,7 +55,7 @@ export default function ContainerRpp() {
             },
             {
               role: "user",
-              content: `create RPP with main subject is ${mapel},nama sekolah = ${namaSekolah} nama sd = ${namaSd}, kelas = ${kelas}, semester = ${semester}, waktu = ${waktu}, tujuan pembelajaran = ${tujuanPembelajaran}, an the goals of that learning is tujuan pembelajaran = ${tujuanPembelajaran} base on this format ${text} change all the thing inside that format so the subject is base on this ${materi}. make it on md format you need to make it on a table`,
+              content: `take a break and then create RPP with main subject is ${mapel},nama sekolah = ${namaSekolah} nama sd = ${namaSd}, kelas = ${kelas}, semester = ${semester}, waktu = ${waktu}, tujuan pembelajaran = ${tujuanPembelajaran}, an the goals of that learning is tujuan pembelajaran = ${tujuanPembelajaran} base on this format ${text} change all the thing inside that format so the subject is base on this ${materi}. make it on md format you need to make it on a table`,
             },
           ],
           temperature: 0,

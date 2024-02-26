@@ -1,38 +1,27 @@
-Format :  Rencana Pelaksanaan Pembelajaran (RPP) 
+ #RENCANA PELAKSANAAN PEMBELAJARAN (RPP)                                     
 
-**RENCANA PELAKSANAAN PEMBELAJARAN** 
+                     
+ **Satuan Pendidikan**                      :              [nama sd]      
+ **Mata Pelajaran**                         :              [mata pelajaran]            
+ **Kelas/Semester**                         :              [kelas][semester]             
+  (the thing up there does not have to be a table)    
+ **Materi Pokok**                           :              [materi] (dont cotinue here)
+ **Alokasi Waktu**                          :              [waktu] Menit 
+ (the thing up there does not have to be a table)
 
-**Kurikulum Merdeka ![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.001.png)![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.002.png)Penyusun : Erni Kusumawati, S.Pd** 
-
-**Instansi : SDN 2 Kumbang** 
-
-**Tahun Penyusunan  :  Tahun 2022** 
-
-**Jenjang Sekolah  :  SD** 
-
-**Mata Pelajaran  :  Bahasa Indonesia**  
-
-**Fase / Kelas  :  B / 4**  
-
-**Bab IV : Meliuk dan Menerjang** 
-
-**Tema : Bergerak** 
-
-**Alokasi Waktu  :   1 x pertemuan ( 10 Menit) ![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.003.png)![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.004.png)**
-
-1. **Tujuan pembelajaran**  
-- Melalui kegiatan menyimak contoh poster siswa dapat mengidentifikasi kalimat persuasifs 
-- Mellaui kegiatan menulis poster siswa dapat membuat kalimat persuasive dengan baik dan  benar  
-2. **Kompetensi awal**  
+**A. TUJUAN PEMBELAJARAN** <br>
+   Setelah mengikuti kegiatan pembelajaran menggunakan model pembelajaran Discovery Learning, dengan metode literasi, eksperimen, praktikum, dan presentasi dengan menumbuhkan sikap menyadari kebesaran Tuhan, sikap gotong royong, jujur, dan berani mengemukakan pendapat, siswa dapat:
+   - [tujuan pembelajaran]
+**B. Kompetensi awal**  
 - Peserta didik dapat mengidentifikasi ide pokok dan ide pendukung pada suatu paragraf atau teks; 
 - Peserta didik dapat berpartisipasi aktif dalam diskusi; 
 - Peserta didik dapat melakukan wawancara dan menuliskan laporannya; dan 
 - Peserta didik dapat menggunakan “ADiKSiMBa” untuk menyusun tulisan. 
-3. **Profil pelajar Pancasila**  
+**C. Profil pelajar Pancasila**  
 - Mandiri  
 - Bernalar kritis 
 - Bergotong royong 
-4. **Sarana dan prasarana**  
+**D. Sarana dan prasarana**  
 - Buku Siswa : Kementerian Pendidikan, Kebudayaan, Riset, Dan Teknologi Republik Indonesia, 2021, Bahasa Indonesia: Lihat Sekitar, SD Kelas IV, Penulis: Eva Y. Nukman, Cicilia Erni Setyowati 
 - Buku bacaan sesuai tema 
 - Alat tulis 
@@ -40,13 +29,13 @@ Format :  Rencana Pelaksanaan Pembelajaran (RPP)
 - Internet 
 - Video pembelajaran :[ https://www.youtube.com/watch?v=-b51sW9ROOc ](https://www.youtube.com/watch?v=-b51sW9ROOc)
 - Gambar poster  
-5. **Kegiatan pembelajaran**  
+**E. Kegiatan pembelajaran**  
 1. Pendahuluan (2 Menit ) 
    1. Guru memberi salam dan mengajak siswa berdoa 
    1. Guru menyiapkan kondisi kelas dan siswa untuk belajar 
    1. Guru  menyapa peserta didik,  (menanyakan kabar, mengecek kehadiran dll), serta menyemangati peserta didik dengan yel-yel, tepukan, atau kebiasaan lain yang menjadi ciri khas/kebiasaan/kesepakatan kelas 
    1. Guru menjelaskan tentang tujuan pembelajaran dan kegiatan pembelajaran yang akan dilaksanakan 
-1. Kegiatan inti  (6 Menit ) 
+2. Kegiatan inti  (6 Menit ) 
 
    Menyimak  
 
@@ -59,20 +48,21 @@ Format :  Rencana Pelaksanaan Pembelajaran (RPP)
 **Menulis** 
 
 1. Guru membagikan kertas pada masing-masing siswa 
-1. Masing- masing Siswa di minta menuliskan hal yang tidak dia sukai/ apa yang dia harapkan 
-1. Guru mengumpulkan kertas-kertas tersebut dan membaginya kembali pada siswa secara acak 
-1. Setiap siswa memberi saran berupa kalimat persuasive untuk setiap kalimat yang di dapatkannya 
-1. Siswa dan guru mendiskusikan mengenai saran yang mereka berikan kepada temannya 
-1. Guru membagi siswa menjadi beberapa kelompok, satu kelompok terdiri dari 3-4 orang siswa 
-1. Guru membagikan LKPD kepada masing-masing kelompok 
-1. Guru menjelaskan tugas yang akan di kerjakan  
-1. Siswa secara berkelompok membuat poster dengan kalimat persuasif pada LKPD yang telah di sediakan 
-1. Setiap kelompok menjelaskan makna poster yang mereka buat 
-3. Penutup ( 2 Menit ) 
+2. Masing- masing Siswa di minta menuliskan hal yang tidak dia sukai/ apa yang dia harapkan 
+3. Guru mengumpulkan kertas-kertas tersebut dan membaginya kembali pada siswa secara acak 
+4. Setiap siswa memberi saran berupa kalimat persuasive untuk setiap kalimat yang di dapatkannya 
+5. Siswa dan guru mendiskusikan mengenai saran yang mereka berikan kepada temannya 
+6. Guru membagi siswa menjadi beberapa kelompok, satu kelompok terdiri dari 3-4 orang siswa 
+7. Guru membagikan LKPD kepada masing-masing kelompok 
+8. Guru menjelaskan tugas yang akan di kerjakan  
+9. Siswa secara berkelompok membuat poster dengan kalimat persuasif pada LKPD yang telah di sediakan 
+10. Setiap kelompok menjelaskan makna poster yang mereka buat 
+11. Penutup ( 2 Menit ) 
    1. Guru dan peserta didik membuat kesimpulan tentang pembelajaran hari ini 
-   1. Guru dan siswa melakukan refleksi pembelajaran yang di lakukan hari ini 
-   1. Guru menutup pelajaran dengan salam dan berdoa 
-6. **Asesmen**  
+   2. Guru dan siswa melakukan refleksi pembelajaran yang di lakukan hari ini 
+   3. Guru menutup pelajaran dengan salam dan berdoa 
+
+**Asesmen**  
 
    Jenis asesmen : Asessmen formatif  Penilaian proses : diskusi kelompk Penilaian ahasil :   Membuat poster  
 
@@ -82,32 +72,27 @@ Isilah kolom dengan nama peserta didik.
 
 **Penilaian Formatif** 
 
-`       `Mata Pelajaran : Bahasa Indonesia  
+Mata Pelajaran : [mata pelajaran] 
+BAB/MATERI : [BAB] /[Materi]        
+Kelas : [kelas] 
 
-`      `BAB/MATERI : IV /Meliuk dan Menerjang        Kelas : 4 A 
+Instrumen Penilaian [keiatan yang dilakukan dalam materi mata pelajaran]
 
-Instrumen Penilaian membuat poster 
+Isilah kolom dengan nama peserta didik 
 
-`      `Isilah kolom dengan nama peserta didik 
+[that table on the botton sould be leave as it should bee, dont make another vertion of its just use that format and text]
 
+|Mampu membuat poster dengan gambar yang menarik dan pemilihan kata yang baik dan sesuai <br>Nilai 4 | Mampu membuat poster dengan gambar dan pemilihan kata yang sesuai <br>Nilai 3 | Mampu membuat poster dengan gambar dan pemilihan kata yang sesuai dengan di pandu oleh guru <br>Nilai 2 | Belum mampu membuat poster dengan gambar dan pemilihan kata yang sesuai Nilai <br>1 |
+|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+|                                                                                                |                                                                           |                                                                                                     |                                                                                 |
+|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+   4: Sangat Baik                                                                                           3: Baik                                                                    2: Cukup                                                                                         1: Kurang
 
+**Tabel 1.2 Instrumen Penilaian untuk Berdiskusi dengan Aktif**
+Isilah kolom dengan nama peserta didik.
+|Mampu membuat poster dengan gambar yang menarik dan pemilihan kata yang baik dan sesuai <br>Nilai 4 | Mampu membuat poster dengan gambar dan pemilihan kata yang sesuai <br>Nilai 3 | Mampu membuat poster dengan gambar dan pemilihan kata yang sesuai dengan di pandu oleh guru <br>Nilai 2 | Belum mampu membuat poster dengan gambar dan pemilihan kata yang sesuai Nilai <br>1 |
+|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+|                                                                                                |                                                                           |                                                                                                     |                                                                                 |
+|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+   4: Sangat Baik                                                                                           3: Baik                                                                    2: Cukup                                                                                         1: Kurang
 
-|<p>**Mampu membuat poster dengan gambar yang menarik dan pemilihan kata yang baik dan sesuai ![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.005.png)**</p><p>**Nilai 4** </p>|<p>**Mampu membuat poster dengan gambar dan pemilihan kata yang sesuai ![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.006.png)**</p><p>**Nilai 3** </p>|<p>**Mampu membuat poster dengan gambar dan pemilihan kata yang sesuai dengan di pandu oleh guru ![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.007.png)**</p><p>**Nilai 2** </p>|<p>**Belum mampu membuat poster dengan gambar dan pemilihan kata yang sesuai ![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.008.png)**</p><p>**Nilai 1** </p>|
-| :-: | :-: | :-: | :-: |
-|||||
-**4: Sangat Baik                         3: Baik                              2: Cukup                     1: Kurang** 
-
-**Tabel 1.2 Instrumen Penilaian untuk Berdiskusi dengan Aktif** Isilah kolom dengan nama peserta didik. 
-
-
-
-|<p>**Mampu Berpartisipasi ![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.009.png)secara Aktif dalam Diskusi dengan Suara yang Jelas** </p><p>**Nilai = 4** </p>|<p>**Mampu Berpartisipasi ![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.010.png)secara Aktif dalam Diskusi** </p><p>**Nilai = 3** </p>|<p>**Berpartisipasi dalam Diskusi ![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.011.png)tetapi Lebih Sering Pasif** </p><p>**Nilai = 2** </p>|<p>**Belum Mampu Berpartisipasi ![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.012.png)Aktif dalam Diskusi** </p><p>**Nilai = 1** </p>|
-| :-: | :-: | :-: | :-: |
-|||||
-**4: Sangat Baik                         3: Baik                              2: Cukup                     1: Kurang** 
-
-**Lampiran**  
-
-a.  Lampiran LKPD 
-
-![](Aspose.Words.becb0b05-215f-40c1-b00d-d789953a2683.013.jpeg)
