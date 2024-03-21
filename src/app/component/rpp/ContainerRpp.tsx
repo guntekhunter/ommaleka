@@ -31,6 +31,7 @@ export default function ContainerRpp() {
   const [modal, setModal] = useState(false);
   const [template, setTemplate] = useState("/data/rpp.txt");
   const [sign, setSign] = useState(false);
+  const [active, setActive] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const print = useReactToPrint({
     content: () => ref.current,
@@ -121,7 +122,10 @@ export default function ContainerRpp() {
 
   const selected = (e: any) => {
     setTemplate(e);
+    setActive(e === "/data/rpp-2.txt");
+    setActive(e !== "/data/rpp.txt");
   };
+
   return (
     <div className="w-full flex justify-center bg-[#FAFAFA] h-full min-h-screen py-[3rem] z-0">
       <div className="w-[90%] space-y-[2rem] z-0">
@@ -135,26 +139,48 @@ export default function ContainerRpp() {
               className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]"
             >
               <Image
-                className="object-cover h-full w-full ..."
+                className={`object-cover h-full w-full ${
+                  active ? "sepia" : ""
+                }`}
                 width={500}
                 height={500}
                 src="/rpp-1.jpg"
                 alt={""}
               />
+              <div className={`absolute top-[18rem] left-[12rem]`}>
+                <Image
+                  className={`h-[5rem] w-full ... ${active ? "" : "hidden"}`}
+                  width={500}
+                  height={500}
+                  src="/ceklis.png"
+                  alt={""}
+                />
+              </div>
             </button>
             <button
               onClick={(e) => {
                 selected("/data/rpp.txt");
               }}
-              className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]"
+              className="relative bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]"
             >
               <Image
-                className="object-cover h-full w-full ..."
+                className={`object-cover h-full w-full ${
+                  active ? "" : "sepia"
+                }`}
                 width={500}
                 height={500}
                 src="/rpp-2.jpg"
                 alt={""}
               />
+              <div className={`absolute top-[18rem] left-[12rem]`}>
+                <Image
+                  className={`h-[5rem] w-full ... ${active ? "hidden" : ""}`}
+                  width={500}
+                  height={500}
+                  src="/ceklis.png"
+                  alt={""}
+                />
+              </div>
             </button>
           </div>
         </div>

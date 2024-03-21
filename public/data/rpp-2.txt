@@ -30,12 +30,13 @@
 - Video pembelajaran :[ https://www.youtube.com/watch?v=-b51sW9ROOc ](https://www.youtube.com/watch?v=-b51sW9ROOc)
 - Gambar poster  
 **E. Kegiatan pembelajaran**  
-1. Pendahuluan (2 Menit ) 
+[so take the waktu and then defide to 3 so you can fill the time for actifity percise, the kegiatan inti field should have more time then the other]
+1. Pendahuluan ([fill this with the result of the waktu defided by 3] Menit ) 
    1. Guru memberi salam dan mengajak siswa berdoa 
    1. Guru menyiapkan kondisi kelas dan siswa untuk belajar 
    1. Guru  menyapa peserta didik,  (menanyakan kabar, mengecek kehadiran dll), serta menyemangati peserta didik dengan yel-yel, tepukan, atau kebiasaan lain yang menjadi ciri khas/kebiasaan/kesepakatan kelas 
    1. Guru menjelaskan tentang tujuan pembelajaran dan kegiatan pembelajaran yang akan dilaksanakan 
-2. Kegiatan inti  (6 Menit ) 
+2. Kegiatan inti  ([fill this with the result of the waktu defided by 3] Menit ) 
 
    Menyimak  
 
@@ -57,16 +58,16 @@
 8. Guru menjelaskan tugas yang akan di kerjakan  
 9. Siswa secara berkelompok membuat poster dengan kalimat persuasif pada LKPD yang telah di sediakan 
 10. Setiap kelompok menjelaskan makna poster yang mereka buat 
-11. Penutup ( 2 Menit ) 
+11. Penutup ( [fill this with the result of the waktu defided by 3] Menit ) 
    1. Guru dan peserta didik membuat kesimpulan tentang pembelajaran hari ini 
    2. Guru dan siswa melakukan refleksi pembelajaran yang di lakukan hari ini 
    3. Guru menutup pelajaran dengan salam dan berdoa 
 
 **Asesmen**  
 
-   Jenis asesmen : Asessmen formatif  Penilaian proses : diskusi kelompk Penilaian ahasil :   Membuat poster  
+   Jenis asesmen : Asessmen formatif  Penilaian proses : diskusi kelompk Penilaian ahasil :   [make a actifity base on mata pelajaran and materi]  
 
-**Tabel 1.1  Instrumen Penilaian Membuat Poster** 
+**Tabel 1.1  Instrumen Penilaian [fill this base on the mata pelajaran and materi]** 
 
 Isilah kolom dengan nama peserta didik. 
 
@@ -82,7 +83,7 @@ Isilah kolom dengan nama peserta didik
 
 [that table on the botton sould be leave as it should bee, dont make another vertion of its just use that format and text]
 
-|Mampu membuat poster dengan gambar yang menarik dan pemilihan kata yang baik dan sesuai <br>Nilai 4 | Mampu membuat poster dengan gambar dan pemilihan kata yang sesuai <br>Nilai 3 | Mampu membuat poster dengan gambar dan pemilihan kata yang sesuai dengan di pandu oleh guru <br>Nilai 2 | Belum mampu membuat poster dengan gambar dan pemilihan kata yang sesuai Nilai <br>1 |
+|Mampu [fill this base on mata pelajaran] <br>Nilai 4 | Mampu [fill this base on mata pelajaran] <br>Nilai 3 | Mampu [fill this base on mata pelajaran] dengan di pandu oleh guru <br>Nilai 2 | Belum mampu [fill this base on mata pelajaran] yang sesuai Nilai <br>1 |
 |------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
 |                                                                                                |                                                                           |                                                                                                     |                                                                                 |
 |------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
@@ -90,7 +91,7 @@ Isilah kolom dengan nama peserta didik
 
 **Tabel 1.2 Instrumen Penilaian untuk Berdiskusi dengan Aktif**
 Isilah kolom dengan nama peserta didik.
-|Mampu membuat poster dengan gambar yang menarik dan pemilihan kata yang baik dan sesuai <br>Nilai 4 | Mampu membuat poster dengan gambar dan pemilihan kata yang sesuai <br>Nilai 3 | Mampu membuat poster dengan gambar dan pemilihan kata yang sesuai dengan di pandu oleh guru <br>Nilai 2 | Belum mampu membuat poster dengan gambar dan pemilihan kata yang sesuai Nilai <br>1 |
+|Mampu [fill this base on mata pelajaran] yang baik dan sesuai <br>Nilai 4 | Mampu [fill this base on mata pelajaran] sesuai <br>Nilai 3 | Mampu [fill this base on mata pelajaran] yang sesuai dengan di pandu oleh guru <br>Nilai 2 | Belum mampu [fill this base on mata pelajaran] yang sesuai Nilai <br>1 |
 |------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
 |                                                                                                |                                                                           |                                                                                                     |                                                                                 |
 |------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|

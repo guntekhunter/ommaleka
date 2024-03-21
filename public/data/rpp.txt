@@ -15,15 +15,16 @@
 
 
 **B. LANGKAH - LANGKAH (KEGIATAN) PEMBELAJARAN**
+[so take the waktu and then defide to 3 so you can fill the time for actifity percise, the kegiatan inti field should have more time then the other]
 
-| KEGIATAN PENDAHULUAN (15 Menit)                           |                       |
+| KEGIATAN PENDAHULUAN ([fill this with the result of the waktu defided by 3 but basse of each priority] Menit)                           |                       |
 |-----------------------------------------------------------|-----------------------|
 | **Penguatan Pendidikan Karakter**                         | - Melakukan pembukaan dengan salam pembuka dan berdoa untuk memulai pembelajaran, memeriksa kehadiran peserta didik sebagai sikap disiplin |
 |                                                           | - Mengaitkan materi pembelajaran yang akan dilakukan dengan pengalaman peserta didik terhadap materi sebelumnya, mengingatkan kembali materi dengan bertanya |
 |                                                           | - Memberikan gambaran tentang manfaat mempelajari materi Mengumpulkan dan Mengurutkan Data dalam kehidupan sehari-hari |
 |                                                           | - Memberitahukan tentang tujuan pembelajaran, materi, kompetensi inti, kompetensi dasar, indikator, dan KKM pada pertemuan yang sedang berlangsung, Pembagian kelompok belajar |
 
-| KEGIATAN INTI  ( 170 Menit)                               |                       |
+| KEGIATAN INTI  ( [fill this with the result of the waktu defided by 3 but basse of each priority] Menit)                               |                       |
 |-----------------------------------------------------------|-----------------------|
 | **Literasi**                                              | - Peserta didik diberi stimulus atau rangsangan untuk memusatkan perhatian pada materi Mengumpulkan dan Mengurutkan Data melalui pendekatan saintifik (mengamati, menanya, mengumpulkan informasi/eksperimen, mengasosiasikan mengolah informasi, mengomunikasikan) |
 | **Mengamati:**                                            | - Peserta didik bersama kelompoknya melakukan pengamatan dari permasalahan yang ada di buku paket berkaitan dengan materi Mengumpulkan dan Mengurutkan Data |
@@ -32,7 +33,7 @@
 | **Communication (Komunikasi):**                           | - Siswa mempresentasikan hasil kerja kelompok/individu, Mempresentasikan hasil diskusi kelompok secara klasikal, mengemukakan pendapat atas presentasi yang dilakukan tentang Mengumpulkan dan Mengurutkan Data dan ditanggapi oleh kelompok yang mempresentasikan, bertanya atas presentasi yang dilakukan, dan peserta didik lain diberi kesempatan untuk menjawabnya |
 | **Creativity (Kreativitas):**                             | - Kesimpulan Pembelajaran, Guru dan Peserta didik menarik sebuah kesimpulan tentang point-point penting yang muncul dalam kegiatan pembelajaran yang baru dilakukan tentang Mengumpulkan dan Mengurutkan Data, Peserta didik bertanya tentang hal yang belum dipahami atau guru menyampaikan beberapa pertanyaan pemicu kepada siswa berkaitan dengan yang akan selesai dipelajari |
 
-| PENUTUP (15 Menit)                                        |                       |
+| PENUTUP ([fill this with the result of the waktu defided by 3 but basse of each priority] Menit)                                        |                       |
 |-----------------------------------------------------------|-----------------------|
 | **Peserta didik**                                         | - Membuat rangkuman/simpulan pelajaran tentang point-point penting yang muncul dalam kegiatan pembelajaran yang baru dilakukan. |
 | **Guru**                                                  | - Memeriksa pekerjaan peserta didik yang selesai dan diberi paraf serta diberi nomor urut peringkat, memberikan penghargaan pada kelompok yang memiliki kinerja dan kerja sama yang baik dalam kegiatan pembelajaran, Memberikan tugas kepada peserta didik (PR), dan mengingatkan peserta didik untuk mempelajari materi yang akan dibahas dipertemuan berikutnya. |
