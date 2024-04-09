@@ -6,7 +6,7 @@ import open from "../../../../public/open.png";
 import close from "../../../../public/close.png";
 
 export default function Navbar() {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
 
   const handleActive = () => {
     setIsActive(!isActive);
@@ -32,7 +32,7 @@ export default function Navbar() {
         </ul>
 
         {/* mobile */}
-        <ul>
+        <ul className="md:hidden">
           <Image
             src={open}
             alt=""
@@ -47,8 +47,8 @@ export default function Navbar() {
           />
         </ul>
         <ul
-          className={`md:space-x-[2rem] text-[.8rem] font-normal md:flex block top-[4rem] absolute bg-white p-[2rem] right-0 z-50 md:hidden drop-shadow-3xl border-black border-[1.5px] rounded-[1rem] ${
-            isActive ? "block" : "hidden"
+          className={`md:space-x-[2rem] text-[.8rem] font-normal md:flex block top-[4rem] absolute bg-white p-[2rem] right-0 z-50 md:hidden drop-shadow-3xl border-black border-[1.5px] rounded-[1rem] md:hidden ${
+            !isActive ? "block" : "hidden"
           }`}
         >
           <li>Home</li>
