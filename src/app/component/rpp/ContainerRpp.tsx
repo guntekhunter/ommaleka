@@ -131,12 +131,12 @@ export default function ContainerRpp() {
       <div className="w-[90%] space-y-[2rem] z-0">
         <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:block md:space-y-[2rem] z-0 space-y-[2rem] block">
           <h1 className="text-[1rem] font-bold">Pilih Template RPP</h1>
-          <div className="grid grid-cols-2 gap-[1.5rem]">
+          <div className="grid md:grid-cols-2 grid-cold-1 gap-[1.5rem]">
             <button
               onClick={(e) => {
                 selected("/data/rpp-2.txt");
               }}
-              className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]"
+              className="bg-white rounded-[1rem] md:p-[2rem] drop-shadow-3xl p-[.5rem] md:px-[3rem] md:py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]"
             >
               <Image
                 className={`object-cover h-full w-full ${
@@ -147,7 +147,9 @@ export default function ContainerRpp() {
                 src="/rpp-1.jpg"
                 alt={""}
               />
-              <div className={`absolute top-[18rem] left-[12rem]`}>
+              <div
+                className={`absolute md:top-[18rem] md:left-[12rem] top-[5rem] left-[5rem]`}
+              >
                 <Image
                   className={`h-[5rem] w-full ... ${active ? "" : "hidden"}`}
                   width={500}
@@ -161,7 +163,7 @@ export default function ContainerRpp() {
               onClick={(e) => {
                 selected("/data/rpp.txt");
               }}
-              className="relative bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]"
+              className="relative bg-white rounded-[1rem] md:p-[2rem] p-[.5rem] drop-shadow-3xl md:px-[3rem] md:py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]"
             >
               <Image
                 className={`object-cover h-full w-full ${
@@ -172,7 +174,9 @@ export default function ContainerRpp() {
                 src="/rpp-2.jpg"
                 alt={""}
               />
-              <div className={`absolute top-[18rem] left-[12rem]`}>
+              <div
+                className={`absolute md:top-[18rem] md:left-[12rem] top-[5rem] left-[5rem]`}
+              >
                 <Image
                   className={`h-[5rem] w-full ... ${active ? "hidden" : ""}`}
                   width={500}
@@ -187,7 +191,7 @@ export default function ContainerRpp() {
         <div className="bg-white rounded-[1rem] p-[2rem] drop-shadow-3xl px-[3rem] py-[2rem] border-[1.5px] border-black md:flex md:space-x-[2rem] z-0 space-y-[2rem]">
           <div className="md:space-y-[1rem] text-[.8rem] font-normal md:w-[40%] z-10">
             <h1 className="text-[1rem] font-bold">Buat RPP</h1>
-            <div className="grid grid-cols-2 gap-[1.5rem]">
+            <div className="grid grid-cols-1 gap-[1.5rem] md:grid-cols-2">
               <Input
                 value={namaSekolah}
                 onChange={(e: any) => handleInputChange(e, setNamaSekolah)}
@@ -251,7 +255,7 @@ export default function ContainerRpp() {
                 NIP Kelapa Sekolah
               </Input>
             </div>
-            <div className="space-y-[.5rem]">
+            <div className="space-y-[.5rem] mt-5">
               <label htmlFor="kelas">Tujuan Pembelajaran</label>
               <textarea
                 placeholder=""
@@ -272,7 +276,7 @@ export default function ContainerRpp() {
               />
             </div>
             <div>
-              <ButtonArticle className="" onClick={startChat}>
+              <ButtonArticle className="mt-5" onClick={startChat}>
                 Buat RPP
               </ButtonArticle>
             </div>
@@ -282,9 +286,9 @@ export default function ContainerRpp() {
               <ButtonArticle onClick={print} className="">
                 Print
               </ButtonArticle>
-              <ButtonArticle onClick={null} className="">
+              {/* <ButtonArticle onClick={null} className="">
                 Copy
-              </ButtonArticle>
+              </ButtonArticle> */}
             </div>
             {/* <div className="bg-white w-full p-[1rem] text-[.5rem] white whitespace-pre-wrap"> */}
             <div
