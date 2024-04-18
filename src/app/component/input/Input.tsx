@@ -1,7 +1,7 @@
 import React from "react";
 
 // @ts-ignore
-export default function Input({ onChange, children, value }) {
+export default function Input({ onChange, children, value, clicked }) {
   return (
     <div className="space-y-[.5rem]">
       <label htmlFor="mataPelajaran">{children}</label>
@@ -12,7 +12,13 @@ export default function Input({ onChange, children, value }) {
         id=""
         value={value}
         onChange={onChange}
+        required
       />
+      {!value.trim() && clicked ? (
+        <p className="text-red-800 text-[.7rem]">Silahkan isi {children}</p>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

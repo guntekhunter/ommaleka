@@ -16,7 +16,6 @@ import Image from "next/image";
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");
   const [mapel, setMapel] = useState("");
-  const [namaSd, setNamaSd] = useState("");
   const [kelas, setKelas] = useState("");
   const [namaSekolah, setNamaSekolah] = useState("");
   const [semester, setSemester] = useState("");
@@ -31,6 +30,7 @@ export default function ContainerRpp() {
   const [modal, setModal] = useState(false);
   const [template, setTemplate] = useState("/data/rpp.txt");
   const [sign, setSign] = useState(false);
+  const [clicked, setClicked] = useState(false);
   const [active, setActive] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const print = useReactToPrint({
@@ -38,6 +38,21 @@ export default function ContainerRpp() {
   });
 
   const startChat = async () => {
+    // Check if any required fields are empty
+    setClicked(true);
+    if (
+      mapel.trim() === "" ||
+      namaSekolah.trim() === "" ||
+      kelas.trim() === "" ||
+      semester.trim() === "" ||
+      waktu.trim() === "" ||
+      tujuanPembelajaran.trim() === "" ||
+      materi.trim() === ""
+    ) {
+      // Display error message or handle the empty fields appropriately
+      console.error("One or more required fields are empty.");
+      return;
+    }
     setLoading(true);
     setSign(false);
     setSummary("");
@@ -56,7 +71,7 @@ export default function ContainerRpp() {
             },
             {
               role: "user",
-              content: `take a break and then create RPP with main subject is ${mapel},nama sekolah = ${namaSekolah} nama sd = ${namaSd}, kelas = ${kelas}, semester = ${semester}, waktu = ${waktu}, tujuan pembelajaran = ${tujuanPembelajaran}, an the goals of that learning is tujuan pembelajaran = ${tujuanPembelajaran}, base on this format ${text} change all the thing inside that format so the subject is base on this ${materi}. make it on md format you need to make it on a table`,
+              content: `take a break and then create RPP with main subject is ${mapel},nama sekolah = ${namaSekolah}, kelas = ${kelas}, semester = ${semester}, waktu = ${waktu}, tujuan pembelajaran = ${tujuanPembelajaran}, an the goals of that learning is tujuan pembelajaran = ${tujuanPembelajaran}, base on this format ${text} change all the thing inside that format so the subject is base on this ${materi}. make it on md format you need to make it on a table`,
             },
           ],
           temperature: 0,
@@ -193,54 +208,63 @@ export default function ContainerRpp() {
             <h1 className="text-[1rem] font-bold">Buat RPP</h1>
             <div className="grid grid-cols-1 gap-[1.5rem] md:grid-cols-2">
               <Input
+                clicked={clicked}
                 value={namaSekolah}
                 onChange={(e: any) => handleInputChange(e, setNamaSekolah)}
               >
                 Nama Sekolah
               </Input>
               <Input
+                clicked={clicked}
                 value={mapel}
                 onChange={(e: any) => handleInputChange(e, setMapel)}
               >
                 Mata Pelajaran
               </Input>
               <Input
+                clicked={clicked}
                 value={kelas}
                 onChange={(e: any) => handleInputChange(e, setKelas)}
               >
                 Kelas
               </Input>
               <Input
+                clicked={clicked}
                 value={semester}
                 onChange={(e: any) => handleInputChange(e, setSemester)}
               >
                 Semester
               </Input>
               <Input
+                clicked={clicked}
                 value={materi}
                 onChange={(e: any) => handleInputChange(e, setMateri)}
               >
                 Materi
               </Input>
               <Input
+                clicked={clicked}
                 value={waktu}
                 onChange={(e: any) => handleInputChange(e, setWaktu)}
               >
                 Waktu
               </Input>
               <Input
+                clicked={clicked}
                 value={namaGuru}
                 onChange={(e: any) => handleInputChange(e, setNamaGuru)}
               >
                 Nama Guru
               </Input>
               <Input
+                clicked={clicked}
                 value={nipGuru}
                 onChange={(e: any) => handleInputChange(e, setNipGuru)}
               >
                 NIP Guru
               </Input>
               <Input
+                clicked={clicked}
                 value={namaKepalaSekolah}
                 onChange={(e: any) =>
                   handleInputChange(e, setNamaKepalaSekolah)
@@ -249,6 +273,7 @@ export default function ContainerRpp() {
                 Nama Kelapa Sekolah
               </Input>
               <Input
+                clicked={clicked}
                 value={nipKepalaSekolah}
                 onChange={(e: any) => handleInputChange(e, setNipKepalaSekolah)}
               >
@@ -274,6 +299,13 @@ export default function ContainerRpp() {
                   setTujuanPembelajaran(e.target.value);
                 }}
               />
+              {!tujuanPembelajaran.trim() && clicked ? (
+                <p className="text-red-800 text-[.7rem]">
+                  Silahkan isi tujuan Pembelajaran
+                </p>
+              ) : (
+                <></>
+              )}
             </div>
             <div>
               <ButtonArticle className="mt-5" onClick={startChat}>
