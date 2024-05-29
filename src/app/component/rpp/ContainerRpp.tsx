@@ -12,6 +12,7 @@ import ModalFinishRPP from "../modal/ModalFinishRPP";
 import ButtonArticle from "../button/ButtonArticle";
 import Input from "../input/Input";
 import Image from "next/image";
+import { requestGroqAi } from "../../utils/Groq";
 
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");
@@ -33,6 +34,7 @@ export default function ContainerRpp() {
   const [clicked, setClicked] = useState(false);
   const [active, setActive] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
   const print = useReactToPrint({
     content: () => ref.current,
   });
@@ -60,54 +62,56 @@ export default function ContainerRpp() {
     const data = await fetch(template);
     const text = await data.text();
     try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        body: JSON.stringify({
-          model: "gpt-3.5-turbo-0125",
-          messages: [
-            {
-              role: "system",
-              content: `You are a language model that can create an RPP (Rencana pelaksanaan pembelajaran) from indonesa and use indonesian languange as your responds, you will be provide by link to a certain data so you can make RPP around and base on that link to a data and other data that you heve. Make the responds on md format`,
-            },
-            {
-              role: "user",
-              content: `take a break and then create RPP with main subject is ${mapel},nama sekolah = ${namaSekolah}, kelas = ${kelas}, semester = ${semester}, waktu = ${waktu}, tujuan pembelajaran = ${tujuanPembelajaran}, an the goals of that learning is tujuan pembelajaran = ${tujuanPembelajaran}, base on this format ${text} change all the thing inside that format so the subject is base on this ${materi}. make it on md format you need to make it on a table`,
-            },
-          ],
-          temperature: 0,
-          stream: true,
-        }),
-      });
-      if (!res.ok) {
-        throw new Error(res.statusText);
-      }
+      const ai = await requestGroqAi("halo");
+      console.log(ai);
+      // const res = await fetch("/api/chat", {
+      //   method: "POST",
+      //   body: JSON.stringify({
+      //     model: "gpt-3.5-turbo-0125",
+      //     messages: [
+      //       {
+      //         role: "system",
+      //         content: `You are a language model that can create an RPP (Rencana pelaksanaan pembelajaran) from indonesa and use indonesian languange as your responds, you will be provide by link to a certain data so you can make RPP around and base on that link to a data and other data that you heve. Make the responds on md format`,
+      //       },
+      //       {
+      //         role: "user",
+      //         content: `take a break and then create RPP with main subject is ${mapel},nama sekolah = ${namaSekolah}, kelas = ${kelas}, semester = ${semester}, waktu = ${waktu}, tujuan pembelajaran = ${tujuanPembelajaran}, an the goals of that learning is tujuan pembelajaran = ${tujuanPembelajaran}, base on this format ${text} change all the thing inside that format so the subject is base on this ${materi}. make it on md format you need to make it on a table`,
+      //       },
+      //     ],
+      //     temperature: 0,
+      //     stream: true,
+      //   }),
+      // });
+      // if (!res.ok) {
+      //   throw new Error(res.statusText);
+      // }
 
-      const body = res.body;
-      if (!body) {
-        return;
-      }
+      // const body = res.body;
+      // if (!body) {
+      //   return;
+      // }
 
-      const onParse = (event: ParsedEvent | ReconnectInterval) => {
-        if (event.type === "event") {
-          const data = event.data;
-          try {
-            const text = JSON.parse(data).text ?? "";
-            setSummary((prev) => prev + text);
-          } catch (e) {
-            console.error(e);
-          }
-        }
-      };
-      const reader = body.getReader();
-      const decoder = new TextDecoder();
-      const parser = createParser(onParse);
-      let done = false;
-      while (!done) {
-        const { value, done: doneReading } = await reader.read();
-        done = doneReading;
-        const chunkValue = decoder.decode(value);
-        parser.feed(chunkValue);
-      }
+      // const onParse = (event: ParsedEvent | ReconnectInterval) => {
+      //   if (event.type === "event") {
+      //     const data = event.data;
+      //     try {
+      //       const text = JSON.parse(data).text ?? "";
+      //       setSummary((prev) => prev + text);
+      //     } catch (e) {
+      //       console.error(e);
+      //     }
+      //   }
+      // };
+      // const reader = body.getReader();
+      // const decoder = new TextDecoder();
+      // const parser = createParser(onParse);
+      // let done = false;
+      // while (!done) {
+      //   const { value, done: doneReading } = await reader.read();
+      //   done = doneReading;
+      //   const chunkValue = decoder.decode(value);
+      //   parser.feed(chunkValue);
+      // }
       // cofetti evvect
       const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti({
@@ -120,15 +124,16 @@ export default function ContainerRpp() {
         setModal(false);
       }, 3000);
 
-      const data = res.body;
-      if (!data) {
-        setLoading(false);
-        return;
-      }
+      // const data = ai.body;
+      // if (!data) {
+      //   setLoading(false);
+      //   return;
+      // }
     } catch (error) {
       console.log(error);
     }
   };
+  console.log(summary);
 
   const handleInputChange = (e: any, setterFunction: any) => {
     e.preventDefault();
