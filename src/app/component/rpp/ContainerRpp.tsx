@@ -4,7 +4,7 @@ import {
   ReconnectInterval,
   createParser,
 } from "eventsource-parser";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import { useReactToPrint } from "react-to-print";
 import JSConfetti from "js-confetti";
@@ -34,6 +34,8 @@ export default function ContainerRpp() {
   const [sign, setSign] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [active, setActive] = useState(false);
+  const [finish, setFinish] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   const print = useReactToPrint({
@@ -41,6 +43,7 @@ export default function ContainerRpp() {
   });
 
   const startChat = async () => {
+    setFinish(false);
     // Check if any required fields are empty
     setClicked(true);
     if (
@@ -63,80 +66,49 @@ export default function ContainerRpp() {
     const data = await fetch(template);
     const text = await data.text();
     try {
-      fetchData(`create RPP with main subject is ${mapel},nama sekolah = ${namaSekolah}, kelas = ${kelas}, semester = ${semester}, waktu = ${waktu}, tujuan pembelajaran = ${tujuanPembelajaran}, an the goals of that learning is tujuan pembelajaran = ${tujuanPembelajaran}, base on this format ${text} change all the thing inside that format so the subject is base on this ${materi}. make it on md format you need to make it on a table`)
-      .then((res:any) => {
-        const data = res.body;
-        // cofetti evvect
-      const jsConfetti = new JSConfetti();
-      jsConfetti.addConfetti({
-        confettiColors: ["#a855f7", "#3b0764", "#ef4444", "#ec4899", "#2563eb"],
-      });
-      // show the modal here
-      setModal(true);
-      setSign(true);
-      setTimeout(() => {
-        setModal(false);
-      }, 3000);
-          return setSummary(res);
+      const inputText = `create RPP with main subject is ${mapel}, nama sekolah = ${namaSekolah}, kelas = ${kelas}, semester = ${semester}, waktu = ${waktu}, tujuan pembelajaran = ${tujuanPembelajaran}, and the goals of that learning is tujuan pembelajaran = ${tujuanPembelajaran}, based on this format ${text} change all the things inside that format so the subject is based on this ${materi}. make it in md format you need to make it in a table`;
+
+      const handleChunk = (chunk: string) => {
+        console.log("Received chunk:", chunk);
+        setSummary((prev) => prev + chunk);
+        // Handle each chunk of data here
+      };
+
+      const handleError = (error: any) => {
+        console.error("Error:", error);
+        // Handle errors here
+      };
+
+      fetchData(inputText, handleChunk, handleError)
+        .then((response) => {
+          console.log("Fetch data complete:", response);
+          setFinish(true);
+          // cofetti evvect
+          const jsConfetti = new JSConfetti();
+          jsConfetti.addConfetti({
+            confettiColors: [
+              "#a855f7",
+              "#3b0764",
+              "#ef4444",
+              "#ec4899",
+              "#2563eb",
+            ],
+          });
+          // show the modal here
+          setModal(true);
+          setSign(true);
+          setTimeout(() => {
+            setModal(false);
+          }, 3000);
+          // return setSummary(res);
         })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-      // const res = await fetch("/api/chat", {
-      //   method: "POST",
-      //   body: JSON.stringify({
-      //     model: "gpt-3.5-turbo-0125",
-      //     messages: [
-      //       {
-      //         role: "system",
-      //         content: `You are a language model that can create an RPP (Rencana pelaksanaan pembelajaran) from indonesa and use indonesian languange as your responds, you will be provide by link to a certain data so you can make RPP around and base on that link to a data and other data that you heve. Make the responds on md format`,
-      //       },
-      //       {
-      //         role: "user",
-      //         content: `take a break and then create RPP with main subject is ${mapel},nama sekolah = ${namaSekolah}, kelas = ${kelas}, semester = ${semester}, waktu = ${waktu}, tujuan pembelajaran = ${tujuanPembelajaran}, an the goals of that learning is tujuan pembelajaran = ${tujuanPembelajaran}, base on this format ${text} change all the thing inside that format so the subject is base on this ${materi}. make it on md format you need to make it on a table`,
-      //       },
-      //     ],
-      //     temperature: 0,
-      //     stream: true,
-      //   }),
-      // });
-      // if (!res.ok) {
-      //   throw new Error(res.statusText);
-      // }
-
-      // const body = res.body;
-      // if (!body) {
-      //   return;
-      // }
-
-      // const onParse = (event: ParsedEvent | ReconnectInterval) => {
-      //   if (event.type === "event") {
-      //     const data = event.data;
-      //     try {
-      //       const text = JSON.parse(data).text ?? "";
-      //       setSummary((prev) => prev + text);
-      //     } catch (e) {
-      //       console.error(e);
-      //     }
-      //   }
-      // };
-      // const reader = body.getReader();
-      // const decoder = new TextDecoder();
-      // const parser = createParser(onParse);
-      // let done = false;
-      // while (!done) {
-      //   const { value, done: doneReading } = await reader.read();
-      //   done = doneReading;
-      //   const chunkValue = decoder.decode(value);
-      //   parser.feed(chunkValue);
-      // }
-      
-
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
     } catch (error) {
       console.log(error);
     }
   };
-  console.log(summary);
 
   const handleInputChange = (e: any, setterFunction: any) => {
     e.preventDefault();
@@ -148,6 +120,14 @@ export default function ContainerRpp() {
     setActive(e === "/data/rpp-2.txt");
     setActive(e !== "/data/rpp.txt");
   };
+
+  useEffect(() => {
+    let large = window.matchMedia("(min-width: 740px)").matches;
+
+    if (!large && finish) {
+      print();
+    }
+  }, [finish, isLargeScreen, print]);
 
   return (
     <div className="w-full flex justify-center bg-[#FAFAFA] h-full min-h-screen py-[3rem] z-0">
@@ -321,16 +301,12 @@ export default function ContainerRpp() {
               </ButtonArticle>
             </div>
           </div>
-          <div className="bg-gray-200 md:w-[60%] p-[2rem] h-[40rem] overflow-y-scroll relative scrollbar-thin scrollbar-track-black scrollbar-thumb-purple-500 py-[1rem] dark:scrollbar-track-purple-500 flex-col-reverse flex-1 flex">
+          <div className="bg-gray-200 md:block md:w-[60%] p-[2rem] h-[40rem] overflow-y-scroll relative scrollbar-thin scrollbar-track-black scrollbar-thumb-purple-500 py-[1rem] dark:scrollbar-track-purple-500 md:flex-col-reverse md:flex-1 flex hidden">
             <div className="fixed bottom-5 transform-translate-x-1/2 -translate-y-1/2 w-[45%] px-[1rem] space-x-[1rem] flex text-[.6rem]">
               <ButtonArticle onClick={print} className="">
                 Print
               </ButtonArticle>
-              {/* <ButtonArticle onClick={null} className="">
-                Copy
-              </ButtonArticle> */}
             </div>
-            {/* <div className="bg-white w-full p-[1rem] text-[.5rem] white whitespace-pre-wrap"> */}
             <div
               className="bg-white w-full p-[4rem] text-[.5rem] white font-serif"
               ref={ref}
@@ -383,4 +359,7 @@ export default function ContainerRpp() {
       </div>
     </div>
   );
+}
+function useMediaQuery(arg0: { query: string }) {
+  throw new Error("Function not implemented.");
 }
