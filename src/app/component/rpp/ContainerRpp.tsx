@@ -13,6 +13,7 @@ import ButtonArticle from "../button/ButtonArticle";
 import Input from "../input/Input";
 import Image from "next/image";
 import { requestGroqAi } from "../../utils/Groq";
+import fetchData from "@/app/api/groq/route";
 
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");
@@ -62,8 +63,25 @@ export default function ContainerRpp() {
     const data = await fetch(template);
     const text = await data.text();
     try {
-      const ai = await requestGroqAi("halo");
-      console.log(ai);
+      fetchData(`create RPP with main subject is ${mapel},nama sekolah = ${namaSekolah}, kelas = ${kelas}, semester = ${semester}, waktu = ${waktu}, tujuan pembelajaran = ${tujuanPembelajaran}, an the goals of that learning is tujuan pembelajaran = ${tujuanPembelajaran}, base on this format ${text} change all the thing inside that format so the subject is base on this ${materi}. make it on md format you need to make it on a table`)
+      .then((res:any) => {
+        const data = res.body;
+        // cofetti evvect
+      const jsConfetti = new JSConfetti();
+      jsConfetti.addConfetti({
+        confettiColors: ["#a855f7", "#3b0764", "#ef4444", "#ec4899", "#2563eb"],
+      });
+      // show the modal here
+      setModal(true);
+      setSign(true);
+      setTimeout(() => {
+        setModal(false);
+      }, 3000);
+          return setSummary(res);
+        })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
       // const res = await fetch("/api/chat", {
       //   method: "POST",
       //   body: JSON.stringify({
@@ -112,23 +130,8 @@ export default function ContainerRpp() {
       //   const chunkValue = decoder.decode(value);
       //   parser.feed(chunkValue);
       // }
-      // cofetti evvect
-      const jsConfetti = new JSConfetti();
-      jsConfetti.addConfetti({
-        confettiColors: ["#a855f7", "#3b0764", "#ef4444", "#ec4899", "#2563eb"],
-      });
-      // show the modal here
-      setModal(true);
-      setSign(true);
-      setTimeout(() => {
-        setModal(false);
-      }, 3000);
+      
 
-      // const data = ai.body;
-      // if (!data) {
-      //   setLoading(false);
-      //   return;
-      // }
     } catch (error) {
       console.log(error);
     }
