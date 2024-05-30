@@ -13,7 +13,7 @@ import ButtonArticle from "../button/ButtonArticle";
 import Input from "../input/Input";
 import Image from "next/image";
 import { requestGroqAi } from "../../utils/Groq";
-import fetchData from "@/app/component/function/groq/route";
+import fetchData from "@/app/component/function/groq/Groq";
 
 export default function ContainerRpp() {
   const [summary, setSummary] = useState("");

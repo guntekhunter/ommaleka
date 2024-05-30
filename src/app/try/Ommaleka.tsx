@@ -3,7 +3,7 @@ import { ChatGroq } from "@langchain/groq";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import { useEffect, useState } from "react";
-import fetchData from "../component/function/groq/route";
+import fetchData from "../component/function/groq/Groq";
 
 
 
