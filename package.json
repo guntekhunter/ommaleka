@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@langchain/groq": "^0.0.12",
     "eventsource-parser": "^1.1.1",
     "groq-sdk": "^0.4.0",
     "js-confetti": "^0.12.0",
